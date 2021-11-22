@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import ToDoList from '../components/ToDoList.vue';
+    import ToDoList from '../components/potet.vue';
 
     export default {
         components: {
