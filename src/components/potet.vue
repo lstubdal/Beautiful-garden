@@ -4,14 +4,15 @@
 
         <section class="toDoList__addTaskSection" >
             <input v-model="newTask" type="text" placeholder="Add task here" class="toDoList__input" @keyup.enter="addTask"> <!--@keyup.enter => addTask when enter is pused-->
-                <div v-for="task in tasks" :key="task.id" class="toDoList__taskContainer">
+                <button @click="addTask" class="toDoList__button">Add Task</button>
+                <div v-for="task, index in tasks" class="toDoList__taskContainer">
                     <div class="toDoList__task"> {{ task.text }} </div>
-                    <div class="toDoList__remove">&times;</div> 
+                    <div class="toDoList__remove">remove</div> 
                 </div>
             <!--button @click="addTask" class="toDoList__button">Add Task</button-->
             
 
-                <!--button @click="removeTask" class="toDoList__remove">remove</button-->
+                <!--button @click="removeTask(index)" class="toDoList__remove">remove</button-->
            
         </section>
 
@@ -33,7 +34,7 @@
     export default {
         data() {
             return {
-                id: 1,
+                
                 newTask: '',
                 tasks: [],
             }
@@ -45,10 +46,10 @@
                 if (this.newTask === '') {                       // alert user if they try to add without writing
                     alert('Ups, you need to write a task!')
                 } else {
-                    this.tasks.push({text: this.newTask, done: false, id: this.id});               // add task   
+                    this.tasks.push({text: this.newTask, done: false });   
+                    this.newTask = '';            // add task   
                 }
-                this.id++;
-                this.newTask = '';
+               
             
             },
             taskChecked() {
@@ -59,7 +60,7 @@
         
                 const tasksOnScreen = document.querySelectorAll('.toDoList__remove');
                 [...tasksOnScreen].forEach(task => {
-                    console.log( )
+                    console.log( ) /* ikke bruk */
                 })
                 /*[...tasksOnScreen].forEach(taskOnScreen => {
                     this.tasks.forEach(taskInList => {
