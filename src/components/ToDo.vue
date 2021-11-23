@@ -83,7 +83,7 @@
 </script>
 
 <style>
-     
+
     .toDoList {
         overflow: scroll;
         height: 100%;
@@ -138,6 +138,6 @@
     .toDoList__remove::before {
         content: 'remove';
         font-size: 1em;
-
     }
+
 </style>
