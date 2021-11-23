@@ -1,10 +1,16 @@
 <template>
   <div class="dashboard">
     <div class="dashboard__container">
-      <h1 class="dashboard__component dashboard__title">
-        Beautiful <br />
-        garden
-      </h1>
+      <div class="dashboard__component">
+        <div class="dashboard__titleContainer">
+          <h1 class="dashboard__title">
+            Beautiful <br />
+            garden
+          </h1>
+          <h2 class="dashboard__undertitle">By Lotte & Sølvi</h2>
+        </div>
+      </div>
+
       <div class="dashboard__component dashboard__toDoList">
         <ToDoList />
       </div>
