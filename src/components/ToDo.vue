@@ -5,9 +5,9 @@
         <div v-for="(task, index) in tasks" class="toDo__task">   
             <button class="toDo__button"></button>
             <div class="toDo__task">{{ task.text }}</div>
-            <div class="toDo__remove">
+            <button @click="removeTask(index)" class="toDo__remove">
                 <img src="../../assets/trashIcon.png" alt="trash icon">
-            </div>
+            </button>
       </div>
       <input v-model="newTask" type="text"  class="toDo__input" placeholder=" +  Add task, push enter" @keyup.enter="addTask"> <!-- keyup.enter calls addTask function after pushed -->
     </div>
@@ -25,17 +25,15 @@ export default {
   methods: {
     addTask() {
       if (this.newTask === "") {
-        // alert user if they try to add without writing
-        alert("Ups, you need to write a task!");
+        alert("Ups, you need to write a task!");    // alert user if they try to add without writing
       } else {
-        this.tasks.push({ text: this.newTask, done: false });
-        console.log(this.newTask)
-        this.newTask = ""; // add task
+        this.tasks.push({ text: this.newTask, done: false });       // false attribute for taskChecked method
+        this.newTask = "";      // reset newTask for next input
       }
     },
     taskChecked() {},
-    removeTask() {
-
+    removeTask(index) {
+        this.tasks.splice(index, 1);    // remove clicked task at given index
     },
   },
 };
@@ -105,13 +103,12 @@ export default {
     border-radius: 10px;
     padding: 1% 5% 1% 5%;
     bottom: 0%;
-
 }
-
 .toDo__remove {
-        margin-right: 10%
+    background: none;
+    border: none;
+    margin-right: 10%
 }
-
 .toDo__remove img {
     height: 25px;
     width: 30px;
