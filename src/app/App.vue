@@ -1,12 +1,17 @@
 <template>
   <div class="dashboard">
-    <h1 class="dashboard__title">Our component dashboard</h1>
     <div class="dashboard__container">
-      <div class="dashboard__component dashboard__toDoList"><ToDoList /></div>
-      <div class="dashboard__component">slideshow</div>
-      <div class="dashboard__component">kontaktskjema</div>
-      <div class="dashboard__component">sorterbar tabell</div>
-      <div class="dashboard__component">quiz-app</div>
+      <h1 class="dashboard__component dashboard__title">
+        Beautiful <br />
+        garden
+      </h1>
+      <div class="dashboard__component dashboard__toDoList">
+        <ToDoList />
+      </div>
+      <div class="dashboard__component">Help from flower experts</div>
+      <div class="dashboard__component">Slideshow</div>
+      <div class="dashboard__component">Time to learn about flowers</div>
+      <div class="dashboard__component">All the flowers in the garden</div>
     </div>
   </div>
 </template>
