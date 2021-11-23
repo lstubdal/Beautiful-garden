@@ -86,9 +86,3 @@ body {
 	background-color: beige;
 }
 
-.toDoList__remove::before {
-	content: 'remove';
-	font-size: 1em;
-
-}
-
