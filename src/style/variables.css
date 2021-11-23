@@ -1,4 +1,5 @@
 :root {
     --light: #ffff4;
-    --component-headline: 'Red Hat Text';
+    --component-headline: 'Red Hat Text', sans-serif;
+    
 }
