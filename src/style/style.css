@@ -13,13 +13,12 @@ body {
 	width: 100vw;
 	background-image: url('../../assets/background.jpg');
 	background-size: cover;
-	opacity: 90%;;
-	background-color: lightyellow;
+	opacity: 90%;
 }
 .dashboard__title {
 	
 }
-.dashboard__components {
+.dashboard__container {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
