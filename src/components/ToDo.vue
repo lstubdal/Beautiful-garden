@@ -1,13 +1,13 @@
 <template>
-    <div class="toDoList">
-        <h2 class="toDoList__title">To do list</h2>
+    <div class="toDo">
+        <h2 class="toDo__title">To do list</h2>
 
-        <section class="toDoList__addTaskSection" >
-            <input v-model="newTask" type="text" placeholder="Add task here" class="toDoList__input" @keyup.enter="addTask"> <!--@keyup.enter => addTask when enter is pused-->
-                <button @click="addTask" class="toDoList__button">Add Task</button>
-                <div v-for="task, index in tasks" class="toDoList__taskContainer">
-                    <div class="toDoList__task"> {{ task.text }} </div>
-                    <div class="toDoList__remove">remove</div> 
+        <section class="toDo__addTaskSection" >
+            <input v-model="newTask" type="text" placeholder="Add task here" class="toDo__input" @keyup.enter="addTask"> <!--@keyup.enter => addTask when enter is pused-->
+                <button @click="addTask" class="toDo__button">Add Task</button>
+                <div v-for="task, index in tasks" class="toDo__taskContainer">
+                    <div class="toDo__task"> {{ task.text }} </div>
+                    <div class="toDo__remove">remove</div> 
                 </div>
             <!--button @click="addTask" class="toDoList__button">Add Task</button-->
             
@@ -84,26 +84,27 @@
 
 <style>
 
-    .toDoList {
+
+    .toDo {
         overflow: scroll;
         height: 100%;
         background-color: rgb(191, 202, 188);
     }
-    .toDoList__title {
+    .toDo__title {
         font-size: 1.5em;
         text-align: center;
         padding: 20px;
     }
-    .toDoList__taskContainer {
+    .toDo__taskContainer {
         display: flex;
         text-decoration: none;
     }
-    .toDoList__input {
+    .toDo__input {
         height: 35px;
         width: 210px;
         border-radius: 2px;
     }
-    .toDoList__button {
+    .toDo__button {
         display: flex;
         justify-self: center;
         background: none;
@@ -117,7 +118,7 @@
         margin-bottom: 10%;
     }
 
-    .toDoList__task {
+    .toDo__task {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -128,16 +129,11 @@
         font-size: 1.2em;
     }
 
-    .toDoList__remove {
+    .toDo__remove {
         background:none;
         border:none;
         cursor: pointer;
         background-color: beige;
-    }
-
-    .toDoList__remove::before {
-        content: 'remove';
-        font-size: 1em;
     }
 
 </style>
