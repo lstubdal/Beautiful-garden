@@ -6,14 +6,13 @@ body {
 /******* DASHBOARD ********/
 
 .dashboard {
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	justify-content: center;
 	align-items: center;
+	background-color: lightyellow;
 }
 .dashboard__title {
-	padding: 3%;
-	text-align: center;
+	
 }
 .dashboard__components {
 	display: flex;
