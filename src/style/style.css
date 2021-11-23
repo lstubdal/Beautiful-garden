@@ -10,6 +10,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-image: url('../../assets/background.jpg');
+	background-size: cover;
+	opacity: 90%;;
 }
 .dashboard__title {
 	padding: 3%;
