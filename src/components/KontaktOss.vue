@@ -1,24 +1,16 @@
 <template>
 	<div class="contact-form">
 		<h2 class="contact-form__title">help from flower experts</h2>
-		<input class="contact-form__input" type="text" placeholder="FirstName" v-model="form.firstName" />
-		<input class="contact-form__input" type="text" placeholder="LastName" v-model="form.lastName" />
-		<input class="contact-form__input" type="email" placeholder="E-mail" v-model="form.email" />
-
-		<!-- <label :for="`vg-input-${index}`" v-for="(vgClass, index) in content.vgClasses">
-			<div>{{ vgClass }}</div>
-			<input :id="`vg-input-${index}`" name="vg" type="radio" v-model="form.vg" :value="vgClass" />
-		</label>
-
-		<label :for="`sizes-input-${index}`" v-for="(size, index) in content.sizes">
-			<div>{{ size }}</div>
-			<input :id="`sizes-input-${index}`" name="sizes" type="checkbox" v-model="form.sizes" :value="size" />
-		</label> -->
-
-		<input class="contact-form__input-message" type="textarea" placeholder="How can we help you?" v-model="form.message" />
-
-		<button class="contact-form__button" @click="submit_form">Submit</button>
-	</div> 
+		<div class="contact-form__input">
+			<div class="contact-form__fullName">
+				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" />
+				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" />
+			</div>
+			<input class="contact-form__email" type="email" placeholder="E-mail" v-model="form.email" />
+			<input class="contact-form__message" type="textarea" placeholder="What do you need help with?" v-model="form.message" />
+		</div>
+		<button class="contact-form__button" @click="submit_form">Ask!</button>
+	</div> 	
 </template>
 
 <script>
@@ -30,13 +22,6 @@
 					lastName: null,
 					email: null,
 					message: null,
-					vg: null,
-					sizes: [],
-				},
-
-				content: {
-					vgClasses: ['VG1', 'VG2', 'VG3'],
-					sizes: ['S', 'M', 'L', 'XL'],
 				},
 			};
 		},
@@ -51,38 +36,60 @@
 
 <style>
 	.contact-form {
-		padding: 1em;
 		background: #FFDBB0;
-		display: flex;
-		flex-flow: column nowrap;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
 	}
 
 	.contact-form__title {
 		font-size: 1.1em;
 		font-family: var(--component-headline);
 		font-weight: bold;
-		margin-bottom: -3%;
+		align-self: center;
 	}
 
-	.contact-form__input {
-		height: 10%;
+	.contact-form__input input {
+		display: flex;
+		flex-direction: column;
 		border: none;
 		border-radius: 10px;
-		margin: 0.5em 1em 0.5em 1em;
+		padding: 1em;
+		margin-top: 0.5em;
+		width: 100%;
 	}
 
-	.contact-form__input-message {
-		height: 40%;
+	.contact-form__firstName {
+		margin-right: 0.5em;
+	}
+
+	.contact-form__fullName {
+		display: flex; 
+		align-items: center;
+	}
+
+	.contact-form__message {
 		border: none;
 		border-radius: 10px;
-		margin: 0.5em 1em 0.5em 1em;
+		padding: 1em;
+		margin-top: 0.5em;
+		height: 70%;
 	}
 
 	.contact-form__button {
 		width: 20%;
-		display: flex;
-		justify-content: center;
+		height: 8%;
 		align-self: center;
+		border: none; 
+		border-radius: 10px; 
+		cursor: pointer;
+		background-color: white;
+		margin-top: 10%;
+	}
+
+	.contact-form__button:hover {
+		background: var(--light); 
 	}
 </style>
