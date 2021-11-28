@@ -8,7 +8,7 @@
       <div class="dashboard__component">
         <ToDoList />
       </div>
-      <div class="dashboard__component">Help from flower experts</div>
+      <div class="dashboard__component"><ContactForm /></div>
       <div class="dashboard__component">Slideshow</div>
       <div class="dashboard__component">Time to learn about flowers</div>
       <div class="dashboard__component">All the flowers in the garden</div>
@@ -18,10 +18,12 @@
 
 <script>
 import ToDoList from "../components/ToDo.vue";
+import ContactForm from "../components/KontaktOss.vue"; // NB! Husk å endre til engelsknavn 
 
 export default {
   components: {
     ToDoList,
+    ContactForm,
   },
 };
 </script>
