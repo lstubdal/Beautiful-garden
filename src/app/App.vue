@@ -1,17 +1,11 @@
 <template>
   <div class="dashboard">
     <div class="dashboard__container">
+      <h1 class="dashboard__component dashboard__title">
+        Beautiful <br />
+        garden
+      </h1>
       <div class="dashboard__component">
-        <div class="dashboard__titleContainer">
-          <h1 class="dashboard__title">
-            Beautiful <br />
-            garden
-          </h1>
-          <h2 class="dashboard__undertitle">By Lotte & Sølvi</h2>
-        </div>
-      </div>
-
-      <div class="dashboard__component dashboard__toDoList">
         <ToDoList />
       </div>
       <div class="dashboard__component">Help from flower experts</div>
@@ -33,6 +27,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
 @import "../style/reset.css";
 @import "../style/variables.css";
 @import "../style/style.css";
