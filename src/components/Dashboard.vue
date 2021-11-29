@@ -1,7 +1,5 @@
 <template>
-<Header/>
-<RouterView />    <!-- show dashboard -->
- <!--  <div class="dashboard">
+  <div class="dashboard">
     <div class="dashboard__container">
       <h1 class="dashboard__component dashboard__title">
         Beautiful <br />
@@ -15,23 +13,18 @@
       <div class="dashboard__component">Time to learn about flowers</div>
       <div class="dashboard__component">All the flowers in the garden</div>
     </div>
-  </div-->
-  <Footer/>
+  </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-/* import ToDoList from "../components/ToDo.vue";
-import ContactForm from "../components/ContactUs.vue"; */
-import Footer from "../components/Footer.vue";  
+import ToDoList from "../components/ToDo.vue";
+import ContactForm from "../components/ContactUs.vue"; 
 
 
 export default {
   components: {
-    Header,
-/*     ToDoList,
-    ContactForm, */
-    Footer
+    ToDoList,
+    ContactForm,
 
   },
 };
