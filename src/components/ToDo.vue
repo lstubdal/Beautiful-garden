@@ -3,8 +3,10 @@
     <h2 class="toDo__title">flower stuff to do</h2>
     <div class="toDo__taskContainer">
         <div v-for="(task, index) in tasks" class="toDo__task">   
+
             <button @click="taskChecked" class="toDo__button"></button>
             <div class="toDo__task">{{ task.text }}</div>
+
             <button @click="removeTask(index)" class="toDo__remove">
                 <img src="../../assets/trashIcon.png" alt="trash icon">
             </button>
@@ -20,6 +22,7 @@ export default {
     return {
       newTask: "",
       tasks: [],
+      checkedStatus: false
     };
   },
 
@@ -28,11 +31,12 @@ export default {
       if (this.newTask === "") {
         alert("Ups, you need to write a task!");                    // alert user if they try to add without writing
       } else {
-        this.tasks.push({ text: this.newTask, done: false });       // false attribute for taskChecked method
+        this.tasks.push({ text: this.newTask, checked: this.checkedStatus });       
         this.newTask = "";                                          // reset newTask for next input
       }
     },
     taskChecked() {
+      this.isChecked = !this.isChecked;                             // toggleclasss 
 
     },
     removeTask(index) {
@@ -55,7 +59,7 @@ export default {
 }
 .toDo__title {
     font-size: 1.1em;
-    font-family: var(--component-headline);
+    font-family: var(--main-font);
     font-weight: bold;
     margin-bottom: -3%;
 }
@@ -91,8 +95,12 @@ export default {
     border: 2px solid black;
     margin-left: 10%;
 }
+
 .toDo__button:hover {
     background-color: #CFD0A9;
+}
+.toDo__button--checked {
+  background-color: #CFD0A9;
 }
 
 .toDo__task {
