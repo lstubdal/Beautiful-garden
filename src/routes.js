@@ -9,7 +9,7 @@ import Page from './views/Page.vue';
 
 
 export default [
-    {name: 'home',              path: '/home',                      component: Home },
+    {name: 'home',              path: '/',                      component: Home },
     {name: 'To do list', 			path: '/to-do-list', 	            component: ToDoView },
     {name: 'Help from experts', 			path: '/contact-experts', 	        component: Potet},      // HUSK Å ENDRE POTET
     {name: 'Flower slideshow', 		path: '/flower-slideshow', 	        component: SlideshowView }, 
