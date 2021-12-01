@@ -23,22 +23,33 @@ export default {
       newTask: "",
       tasks: [],
       checkedStatus: false
-    };
-  },
+    }
+/*
+   computed: {
+    tasks() {
+      return this.$store.getters.getTasks;
+    },
+
+      newTask() {
+      return this.$store.getters.getNewTask;
+    }  */   
+  }, 
 
   methods: {
     addTask() {
-      if (this.newTask === "") {
+ /*      this.$store.commit('addTask', { text: 'test', checked: false});  SPØR ALEJANDRO HVORDAN KOBLE INPUTVARIABEL TIL NEWTASK I STORAGE*/
+       if (this.newTask === "") {
         alert("Ups, you need to write a task!");                    // alert user if they try to add without writing
       } else {
         this.tasks.push({ text: this.newTask, checked: this.checkedStatus });       
         this.newTask = "";                                          // reset newTask for next input
-      }
+      } 
     },
+
     taskChecked() {
       this.isChecked = !this.isChecked;                             // toggleclasss 
-
     },
+
     removeTask(index) {
         this.tasks.splice(index, 1);                                // remove clicked task at given index
     },
@@ -47,8 +58,7 @@ export default {
 </script>
 
 <style>
-
-.toDo {
+  .toDo {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -56,15 +66,15 @@ export default {
     height: 100%;
     overflow: scroll;
     background-color: #CFD0A9;
-}
-.toDo__title {
+  }
+  .toDo__title {
     font-size: 1.1em;
     font-family: var(--main-font);
     font-weight: bold;
     margin-bottom: -3%;
-}
+  }
 
-.toDo__taskContainer {
+  .toDo__taskContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -75,10 +85,9 @@ export default {
     border: none;
     background-color: white;
     overflow: scroll;
-    padding-top: 2%;
-            
-}
-.toDo__input {
+    padding-top: 2%;     
+  }
+  .toDo__input {
     height: 30px;
     width: 100%;
     border-radius: 10px;
@@ -86,24 +95,22 @@ export default {
     position: absolute;         /* absolute in relation to toDo__taskContainer (parent) */
     bottom: 0%;     /* fix: not at bottom when to many tasks */
     padding-left: 15px;
-}
-.toDo__button {
+  }
+  .toDo__button {
     background-color: var(--light);
     height: 16px;
     width: 30px;
     border-radius: 38%;
     border: 2px solid black;
     margin-left: 10%;
-}
-
-.toDo__button:hover {
+  }
+  .toDo__button:hover {
     background-color: #CFD0A9;
-}
-.toDo__button--checked {
-  background-color: #CFD0A9;
-}
-
-.toDo__task {
+  }
+  .toDo__button--checked {
+    background-color: #CFD0A9;
+  }
+  .toDo__task {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,16 +121,15 @@ export default {
     border-radius: 10px;
     padding: 1% 5% 1% 5%;
     bottom: 0%;
-}
-.toDo__remove {
+  }
+  .toDo__remove {
     background: none;
     border: none;
     margin-right: 10%
-}
-.toDo__remove img {
+  }
+  .toDo__remove img {
     height: 25px;
     width: 30px;
     cursor: pointer;
-}
-
+  }
 </style>

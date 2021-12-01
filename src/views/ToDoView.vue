@@ -1,17 +1,22 @@
 <template>
-    TO DO VIEW
+    <div class="toDo__container">
+        <ToDo />
+    </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
 
-            }
-        }
+    import ToDo from '../components/ToDo.vue';
+
+    export default {
+        components: {
+            ToDo
+        },
     }
 </script>
 
 <style>
-
+    .toDo__container {
+        height: 100vh;
+    }
 </style>

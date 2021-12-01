@@ -1,3 +1,5 @@
+import toDo from './modules/toDo.js';                                         // import toDo module (data only related to toDo component)
+
 export default {
     state() {
         return {
@@ -15,5 +17,9 @@ export default {
         getPages(state) {
             return state.pages;
         }
+    },
+
+    modules: {
+        toDo
     }
 }
