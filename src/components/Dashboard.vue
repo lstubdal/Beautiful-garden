@@ -9,7 +9,7 @@
         <ToDoList />
       </div>
       <div class="dashboard__component"><ContactForm /></div>
-      <div class="dashboard__component">Slideshow</div>
+      <div class="dashboard__component"><Slideshow/></div>
       <div class="dashboard__component">Time to learn about flowers</div>
       <div class="dashboard__component">All the flowers in the garden</div>
     </div>
@@ -19,12 +19,14 @@
 <script>
 import ToDoList from "../components/ToDo.vue";
 import ContactForm from "../components/ContactUs.vue"; 
+import Slideshow from "../components/Slideshow.vue";
 
 
 export default {
   components: {
     ToDoList,
     ContactForm,
+    Slideshow,
 
   },
 };

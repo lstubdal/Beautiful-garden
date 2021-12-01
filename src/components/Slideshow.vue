@@ -1,7 +1,172 @@
-<template></template>
+<template>
+	<div class="slideshow">
+		<div class="slideshow__buttons">
+			<button @click="previousImage" class="slideshow__button">prev</button>
+			<button @click="nextImage" class="slideshow__button">next</button>
+		</div>
+
+		<div class="slideshow__extra">
+			<button class="slideshow__button-caption" @click="showCaption =!showCaption">i</button>
+		</div>
+
+		<div class="slideshow__slides">
+			<figure class="slideshow__slide">
+				<img class="slideshow__img" :src="currentSlide.file" :alt="currentSlide.title">
+				<figcaption v-if="showCaption" class="slideshow__caption">{{ currentSlide.caption }}</figcaption>
+			</figure>
+		</div>
+
+		<div class="slideshow__dots">
+			<button class="slideshow__dot" @click="goToIndex(index)" v-for="(slide, index) in slides" :aria-label="`Go to image ${index + 1}`"></button>
+		</div>
+	</div>
+</template>
 
 <script>
+	export default {
+		data() {
+			return {
+				index: 0, 
+				showCaption: false,
+				slides: [
+					{ title: 'Sunflower', caption: 'Picture 1', file:  './assets/sunflower.jpg' },
+					{ title: 'Aster', caption: 'Picture 2', file:  './assets/aster.jpg' },
+					{ title: 'Daisy', caption: 'Picture 3', file:  './assets/daisy.jpg' },
+					{ title: 'Peony', caption: 'Picture 4', file:  './assets/peony.jpg' },
+					{ title: 'Rose', caption: 'Picture 5', file:  './assets/rose.jpg' },
+					{ title: 'Tulip', caption: 'Picture 6', file:  './assets/tulip.jpg' },
+				],
+			};
+		},
+		
+		computed: {
+			currentSlide() {
+				return this.slides[this.index];
+			}
+		},
+
+		methods: {
+			previousImage() {
+				this.index = (this.index === 0) ? this.slides.length - 1 : this.index - 1;
+			},
+
+			nextImage() {
+				this.index = (this.index === this.slides.length - 1) ? 0 : this.index + 1;
+			},
+
+			goToIndex(index) {
+				this.index = index; 
+			}
+		}
+
+	}
 </script>
 
 <style>
+	.slideshow {
+		background: #ecd0ff;
+		height: 100%;
+		widows: 100%;
+		position: relative;
+	}
+
+	.slideshow__buttons {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.slideshow:hover .slideshow__caption {
+		opacity: 1;
+	}
+
+	.slideshow__button {
+		background: #ddacfd;
+		border: none;
+		padding: 0.5em;
+	}
+
+	.slideshow__slides {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%; 
+	}
+
+	.slideshow__slide {
+		position: absolute;
+		width: 100%;
+		height: 100%; 
+	}
+
+	.slideshow__img {
+		width: 100%; 
+		height: 100%;	
+		object-fit: contain;
+	}
+
+	.slideshow__caption {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 0.75em;
+		padding: 0.5em;
+		background: pink;
+	}
+
+	.slideshow__extra {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+
+	.slideshow__button-caption {
+		padding: 0.5em;
+		color: blue;
+	}
+
+	.slideshow__buttons {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.slideshow__button {
+		padding: 0.5em;
+		text-transform: uppercase;
+		color: blue;
+		align-self: center;
+	}
+
+	.slideshow__dots {
+		position: absolute;
+		bottom: 0;
+		transform: translateY(100%);
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		padding: 0.5em;
+		width: 100%;
+	}
+
+	.slideshow__dot {
+		--dot-size: 0.8em;
+		min-width: var(--dot-size);
+		min-height: var(--dot-size);
+		display: block;
+		background: blue;
+		border-radius: 100%;
+	}
+
+	.slideshow__dot + .slideshow__dot {
+		margin-left: 0.5em;
+	}
 </style>

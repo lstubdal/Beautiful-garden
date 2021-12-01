@@ -28,7 +28,7 @@
 
 		methods: {
 			submit_form() {
-				alert(`Thank you, ${this.name}!`);
+				alert(`Thank you for contacting us, ${this.firstName}. We'll get back to you as soon as possible!`);
 			},
 		},
 	};
