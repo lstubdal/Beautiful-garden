@@ -17,6 +17,10 @@
 
 <style>
     .toDo__container {
-        height: 100vh;
+        margin: 0 auto;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        height: 70vh;
+        width: 45vw;
     }
 </style>

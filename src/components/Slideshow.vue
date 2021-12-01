@@ -66,13 +66,14 @@
 	.slideshow {
 		background: #ecd0ff;
 		height: 100%;
-		widows: 100%;
+		width: 100%;
 		position: relative;
 	}
 
 	.slideshow__buttons {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
+		padding: 2em;
 	}
 
 	.slideshow:hover .slideshow__caption {
@@ -82,7 +83,7 @@
 	.slideshow__button {
 		background: #ddacfd;
 		border: none;
-		padding: 0.5em;
+
 	}
 
 	.slideshow__slides {
