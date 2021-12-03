@@ -1,29 +1,26 @@
 <template>
   <div class="toDo">
-    <h2 class="toDo__title">flower stuff to do</h2>
-    <div class="toDo__taskContainer">
-        <div v-for="(task, index) in tasks" class="toDo__task">   
-           <button @click="taskedChecked(index)" :class="{'toDo__button': !this.checkedStatus, 'toDo__button--checked' : this.checkedStatus }" class="toDo__button" id=index></button> <!-- få tak  -->
-            <div class="toDo__taskText">{{ task.text }}</div>
-            <button @click="removeTask(index)" class="toDo__remove">
-                <img src="../../assets/trashIcon.png" alt="trash icon">
-            </button>
-      </div>
+    <h2 class="toDo__title"> {{ title }}</h2>
+    <div class="toDo__taskContainer"> 
+      <ToDoItem v-for="(task, index) in tasks" :task="task" @done-task="done" @remove-task="remove" class="toDo__task" /> 
       <input v-model="newTask" type="text"  class="toDo__input" placeholder=' +  Write task, push enter' @keyup.enter="addTask">  <!-- keyup.enter calls addTask function after pushed -->
     </div>
   </div>
 </template>
 
 <script>
+
+import ToDoItem from '../components/ToDoItem.vue'
+
 export default {
+  components: {
+    ToDoItem,
+  },
   data() {
     return {
+      title: 'flower stuff to do',
       newTask: "",
-      tasks: [],
-      checkedStatus: false,
-/*       ui: {
-        writeTaskMessage: ' +  Write task, push enter',
-      } */
+      tasks: [],    // add toDoItems components
   }
 /*
    computed: {
@@ -42,17 +39,21 @@ export default {
        if (this.newTask === "") {
         alert("Ups, you need to write a task!");                    // alert user if they try to add without writing
       } else {
-        this.tasks.push({ text: this.newTask, checked: this.checkedStatus });       
-        this.newTask = "";                                          // reset newTask for next input
+        this.tasks.push({ id: this.randomId(), text: this.newTask, done: false });       
+        this.newTask = "";  // reset newTask for next input                                
       } 
     },
-    removeTask(index) {
-        this.tasks.splice(index, 1);                                // remove clicked task at given index
+    remove(task) {
+        const taskIndex = this.tasks.findIndex(currentTask => currentTask.id === task.id); 
+        this.tasks.splice(taskIndex, 1);       // remove clicked task at given index
     },
-    taskedChecked(index) {
-    // change check status on right button -> use id?
-    this.checkedStatus = !this.checkedStatus;
+    done(task) {
+       const taskIndex = this.tasks.findIndex(currentTask => currentTask.id === task.id);
+       this.tasks[taskIndex].done = !this.tasks[taskIndex].done;     // change status on task
     },
+    randomId() {
+      return Math.random().toString(36).slice(2);   // generates random ids
+			},
   },
 };
 </script>
@@ -78,10 +79,10 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 230px;
-    width: 60%;
+    height: 70%;
+    width: 70%;
     position: relative; 
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
     background-color: white;
     overflow: scroll;
@@ -98,21 +99,7 @@ export default {
     border-radius: 10px;
     padding: 1% 5% 1% 5%;
   }
-  .toDo__taskText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: white;
-    font-family: arial;
-    font-size: 0.9em;
-    border-radius: 10px;
-    padding: 1% 5% 1% 5%;
-  }
-
-  .toDo__taskText--checked {
-    text-decoration: line-through 2px;
-  }
+  
   .toDo__input {
     height: 30px;
     width: 100%;
@@ -120,31 +107,9 @@ export default {
     border: 1px solid lightgray;
     position: absolute;         /* absolute in relation to toDo__taskContainer (parent) */
     bottom: 0%;     /* fix: not at bottom when to many tasks */
-    padding-left: 15px;
-  }
-  .toDo__button {
-    background-color: var(--light);
-    height: 16px;
-    width: 30px;
-    border-radius: 38%;
-    border: 2px solid black;
-    margin-left: 10%;
-  }
- /*  .toDo__button:hover {
-    background-color: #CFD0A9;
-  } */
-  .toDo__button--checked {
-    background-color: #CFD0A9;
+    padding-left: 30px;
   }
 
-  .toDo__remove {
-    background: none;
-    border: none;
-    margin-right: 10%
-  }
-  .toDo__remove img {
-    height: 25px;
-    width: 30px;
-    cursor: pointer;
-  }
 </style>
+
+
