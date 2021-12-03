@@ -7,3 +7,13 @@ body {
     background-size: cover;
 }
 
+
+/* ---- MEDIA QUERY ---- */
+
+/* dashboard  */
+@media screen and (max-width: 480px) {
+	.dashboard__container {
+		grid-template-columns: 1fr;	
+	}
+}
+
