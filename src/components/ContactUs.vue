@@ -92,4 +92,12 @@
 	.contact-form__button:hover {
 		background: var(--light); 
 	}
+
+	/* media query */ 
+	
+	@media screen and (max-width: 480px) {
+		.contact-form {
+			height: 60vh;
+		}
+	}
 </style>
