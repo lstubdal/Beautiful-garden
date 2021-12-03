@@ -26,7 +26,7 @@
         width: 100vw;
         height: 20vh;
         background-color: rgb(87, 85, 85);
-        color: white;
+        color: var(--light);
     }
 
     .footer__logo {

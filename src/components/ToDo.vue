@@ -2,8 +2,21 @@
   <div class="toDo">
     <h2 class="toDo__title"> {{ title }}</h2>
     <div class="toDo__taskContainer"> 
-      <ToDoItem v-for="(task, index) in tasks" :task="task" @done-task="done" @remove-task="remove" class="toDo__task" /> 
-      <input v-model="newTask" type="text"  class="toDo__input" placeholder=' +  Write task, push enter' @keyup.enter="addTask">  <!-- keyup.enter calls addTask function after pushed -->
+      
+      <ToDoItem  
+          @done-task="done" 
+          @remove-task="remove" 
+          v-for="(task, index) in tasks" 
+          :task="task"
+          class="toDo__task" /> 
+      
+      <input 
+          v-model="newTask" 
+          type="text"  
+          class="toDo__input" 
+          placeholder=' +  Write task, push enter' 
+          @keyup.enter="addTask">  <!-- keyup.enter calls addTask function after pushed -->
+          
     </div>
   </div>
 </template>
@@ -66,7 +79,7 @@ export default {
     align-items: center;
     height: 100%;
     overflow: scroll;
-    background-color: #CFD0A9;
+    background-color: var(--toDo);
   }
   .toDo__title {
     font-size: 1.1em;
@@ -84,7 +97,7 @@ export default {
     position: relative; 
     border-radius: 8px;
     border: none;
-    background-color: white;
+    background-color: var(--light);
     overflow: scroll;
     padding-top: 2%;     
   }
@@ -93,7 +106,7 @@ export default {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: white;
+    background-color: var(--light);
     font-family: arial;
     font-size: 0.9em;
     border-radius: 10px;
@@ -109,7 +122,6 @@ export default {
     bottom: 0%;     /* fix: not at bottom when to many tasks */
     padding-left: 30px;
   }
-
 </style>
 
 

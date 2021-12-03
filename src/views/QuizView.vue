@@ -1,13 +1,13 @@
 <template>
-    quiz
+    <QuizApp />
 </template>
 
 <script>
+    import QuizApp from '../components/QuizApp.vue';
+    
     export default {
-        data() {
-            return {
-
-            }
+        components: {
+            QuizApp
         }
     }
 </script>

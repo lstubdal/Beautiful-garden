@@ -10,7 +10,7 @@
       </div>
       <div class="dashboard__component"><ContactForm /></div>
       <div class="dashboard__component"><Slideshow/></div>
-      <div class="dashboard__component">Time to learn about flowers</div>
+      <div class="dashboard__component"><QuizApp/></div>
       <div class="dashboard__component">All the flowers in the garden</div>
     </div>
   </div>
@@ -20,6 +20,7 @@
 import ToDoList from "../components/ToDo.vue";
 import ContactForm from "../components/ContactUs.vue"; 
 import Slideshow from "../components/Slideshow.vue";
+import QuizApp from '../components/QuizApp.vue';
 
 
 export default {
@@ -27,14 +28,52 @@ export default {
     ToDoList,
     ContactForm,
     Slideshow,
+    QuizApp
 
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
-@import "../style/reset.css";
-@import "../style/variables.css";
-@import "../style/style.css";
+  .dashboard {
+    display: flex;
+    justify-content: center;
+    height: 120vh;
+    width: 100vw;
+  }
+  .dashboard__titleContainer {
+    display: flex;	
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .dashboard__title {
+    color: #F08383;
+    font-size: 70px;
+    text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 6%;
+  }
+  .dashboard__undertitle {
+    font-size: 30px;
+    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    padding: 5%;
+  }
+  .dashboard__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    row-gap: 2%;
+    column-gap: 2%;
+  }
+  .dashboard__component {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(141, 138, 141);
+  }
 </style>

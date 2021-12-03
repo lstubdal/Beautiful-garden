@@ -22,8 +22,8 @@
         display: flex;
         align-items: center;
         width: 100%;
-        height: 10vh;
-        background-color: white;
+        height: 8vh;
+        background-color: var(--light);
         padding: 30px;
     }
     .header__logo {
