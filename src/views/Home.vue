@@ -4,7 +4,7 @@
 
 <script>
 
-    import Dashboard from '../components/Dashboard.vue';        // import dashboard to homescreen
+    import Dashboard from '../components/Dashboard.vue';        // import dashboard to home
 
     export default {
         components: {
