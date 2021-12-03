@@ -1,5 +1,5 @@
 :root {
-    --light: #ffff4;
+    --light: white;
     --main-font: 'Red Hat Text', sans-serif;
-    
+    --toDo: #CFD0A9;    
 }

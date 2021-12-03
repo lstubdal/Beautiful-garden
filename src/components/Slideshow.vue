@@ -73,7 +73,7 @@
 	.slideshow__buttons {
 		display: flex;
 		justify-content: space-around;
-		padding: 2em;
+		padding: 0.5em;
 	}
 
 	.slideshow:hover .slideshow__caption {

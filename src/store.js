@@ -1,4 +1,5 @@
-import toDo from './modules/toDo.js';                                         // import toDo module (data only related to toDo component)
+import toDo from './modules/toDo.js';  
+import quizApp from './modules/quizApp.js';                                    // import toDo module (data only related to toDo component)
 
 export default {
     state() {
@@ -20,6 +21,7 @@ export default {
     },
 
     modules: {
-        toDo
+        toDo,
+        quizApp
     }
 }

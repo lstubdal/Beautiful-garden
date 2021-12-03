@@ -85,7 +85,7 @@
 		border: none; 
 		border-radius: 10px; 
 		cursor: pointer;
-		background-color: white;
+		background-color: var(--light);
 		margin-top: 10%;
 	}
 
