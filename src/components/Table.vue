@@ -1,4 +1,17 @@
-<template></template>
+<template>
+	<div class="sort-table">
+		<h2 class="sort-table__title"> {{ title }}</h2>
+		<table>
+			<thead>
+				<tr></tr>
+				<tr></tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+</template>
 
 <script>
 </script>
