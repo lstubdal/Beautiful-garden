@@ -11,10 +11,12 @@
                 :alternative="alternative"  
                 />
         </div>
+
         <div  v-else="this.doneWithQuestions" >
             <div class="quiz__result">
-                Your total score is {{ this.totalScore}} / 3
-
+                <div class="quiz__score">
+                    Your total score is {{ this.totalScore}} / 3
+                </div>
                 <div v-if="this.totalScore === 0"> Not good, you suck </div>
                 <div v-if="this.totalScore === 1"> Come on, you can do better </div>
                 <div v-if="this.totalScore === 2"> Not bad </div>
@@ -34,7 +36,6 @@
         components: {
             QuizAlternative
         },
-
         data() {
             return {
                 title: 'time to learn about flowers',
@@ -44,43 +45,43 @@
                 questions: [
                 { 
                     id: 0,
-                    text: 'This is question 1', 
+                    text: 'What is the largest flower in the world?', 
                     alternatives: [
-                                    {id: 'a' , answer: 'Yes' },
-                                    {id: 'b' , answer: 'No' },
-                                    {id: 'c' , answer: 'Maybe' }
-                                    ],
-                      correctAnswerIndex:  0
+                                    {id: 'a', text: 'Arina Tarun' },
+                                    {id: 'b', text: 'Titan Arum' },
+                                    {id: 'c', text: 'Tanim Amara' }
+                                ],
+                      correctAnswerIndex:  1
                 },
                 {
                     id: 1, 
-                    text: 'This is question 2',
+                    text: 'Moonflower is named that because...',
                     alternatives: [
-                                    {id: 'a' , answer: 'Yes' },
-                                    {id: 'b' , answer: 'No' },
-                                    {id: 'c' , answer: 'Maybe'}
-                    ],
-                    correctAnswerIndex: 1
+                                    {id: 'a', text: 'they bloom only at night' },
+                                    {id: 'b', text: 'they are grey and round' },
+                                    {id: 'c', text: 'they only grow at night'}
+                                ],
+                    correctAnswerIndex: 0
                 },
                 {
                     id: 2, 
-                    text: 'This is question 3',
+                    text: 'Is cactus a flower or a plant?',
                     alternatives: [
-                                    {id: 'a', answer: 'Yes',},
-                                    {id: 'b', answer: 'No',},
-                                    {id: 'c', answer: 'Maybe'}
-                    ],
+                                    {id: 'a', text: 'flower',},
+                                    {id: 'b', text: 'plant',},
+                                    {id: 'c', text: 'flowering plant'}
+                                ],
                     correctAnswerIndex: 2
                 },
-
-
             ]
             }
         },
         methods: {
             findUsersAnwer(alternative) {
                 const usersAnswer= this.questions[this.currentQuestion].alternatives.findIndex(currentAlternative => currentAlternative.id === alternative.id)     // find index to alternative user chose
-                const correctAnswer = this.questions[this.currentQuestion].correctAnswerIndex;                                                                     // get the the index of the correct answer to question
+                const correctAnswer = this.questions[this.currentQuestion].correctAnswerIndex;   
+                console.log('uA: ', usersAnswer)      
+                console.log('cA: ', correctAnswer)                                                            // get the the index of the correct answer to question
                 
                 this.checkAnswer(usersAnswer, correctAnswer);       
             },
@@ -99,8 +100,9 @@
                     this.doneWithQuestions = true;
                 }
             },
-            resetQuiz() {
+            resetQuiz() {      
                 this.doneWithQuestions = false;
+                this.currentQuestion = 0;
                 this.totalScore = 0;
             }
         }
@@ -132,28 +134,47 @@
         height: 100%;
         background-color: #D0E5E8;
     }
-    .quiz__title {
-        padding-top: 30px;
-    }
     .quiz__questionNumber {
         font-family: arial;
         font-size: 1.1em;
-        padding-top: 10px;    
+        padding-top: 20px;    
         text-align: center; 
+    }
+    .quiz__title {
+        text-align: center;
     }
     .quiz__question {
         font-family: arial;
-        font-size: 1.6em;
-        padding-top: 20px;
-        padding-bottom: 20px;     
+        font-size: 1.3em;
+        padding: 20px 50px 10px 50px;
+        text-align: center;
+     
     }
     .quiz__result {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100%;   
+    }
+    .quiz__score {
+        font-size: 1.4em;
+        font-family: arial;
+        padding: 10px;
+    }
+    .quiz__feedback {
+        font-size: 1.1em;
     }
     .quiz__resetButton {
-        background-color: white
+        margin-top: 20px;
+        background-color: white;
+        font-size: 1.1em;
+        width: 50%;
+        height: 100%;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+    .quiz__resetButton:hover {
+        background-color: rgb(234, 240, 207);
     }
 </style>

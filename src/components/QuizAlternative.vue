@@ -1,7 +1,7 @@
 
 <template>
      <div class="quiz__alternativeContainer">
-        <button @click="emitAnswer" class="quiz__alternative" aria-label="alternative">{{ alternative.answer }}</button>
+        <button @click="emitAnswer" class="quiz__alternative" aria-label="alternative">{{ alternative.text }}</button> 
     </div>
 </template>
 
@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center ;
     height: 125%;
-    width: 80%;
+    width: 220px;
     border: 0.5px solid black;
     background-color: var(--light);
     border-radius: 10px;
