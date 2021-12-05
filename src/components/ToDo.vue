@@ -8,7 +8,7 @@
           @remove-task="remove" 
           v-for="(task, index) in tasks" 
           :task="task"
-          class="toDo__task" /> 
+           /> 
       
       <input 
           v-model="newTask" 
@@ -29,11 +29,11 @@ export default {
   components: {
     ToDoItem,
   },
-  data() {
-    return {
-      title: 'flower stuff to do',
-      newTask: "",
-      tasks: [],    // add toDoItems components
+    data() {
+      return {
+        title: 'flower stuff to do',
+        newTask: "",
+        tasks: [],    // add toDoItems components
   }
 /*
    computed: {

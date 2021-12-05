@@ -1,4 +1,4 @@
-export default {
+/* export default {
     state() {
         return {
             title: 'time to learn about flowers',
@@ -50,4 +50,4 @@ export default {
             return state.question.alternatives;
         }
     }
-}
+}/ */ */

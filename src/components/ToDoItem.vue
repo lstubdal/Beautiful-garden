@@ -20,7 +20,7 @@
         },
         methods: {
             emitDone() {
-                this.$emit('done-task', this.task) // sender hele objektet som trigget event
+                this.$emit('done-task', this.task)          // send object that triggered event
             },
             emitRemove() {                   
                 this.$emit('remove-task', this.task)        // create event: 'event name', what to return (task obj that triggered emit) 
