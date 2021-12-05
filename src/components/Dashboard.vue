@@ -11,7 +11,7 @@
       <div class="dashboard__component"><ContactForm /></div>
       <div class="dashboard__component"><Slideshow/></div>
       <div class="dashboard__component"><QuizApp/></div>
-      <div class="dashboard__component">All the flowers in the garden</div>
+      <div class="dashboard__component"><Table/></div>
     </div>
   </div>
 </template>
@@ -21,6 +21,7 @@ import ToDoList from "../components/ToDo.vue";
 import ContactForm from "../components/ContactUs.vue"; 
 import Slideshow from "../components/Slideshow.vue";
 import QuizApp from '../components/QuizApp.vue';
+import Table from '../components/Table.vue';
 
 
 export default {
@@ -28,7 +29,8 @@ export default {
     ToDoList,
     ContactForm,
     Slideshow,
-    QuizApp
+    QuizApp,
+    Table,
 
   },
 };
