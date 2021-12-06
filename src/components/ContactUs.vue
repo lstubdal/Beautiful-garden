@@ -1,15 +1,14 @@
 <template>
 	<div class="contact-form">
 		<h2 class="contact-form__title">{{ title }}</h2>
-		<div class="contact-form__error">
+		<form class="contact-form__input">	
+			<div class="contact-form__error">
 				<p>{{ error }}</p>
 				<p class="contact-form__error">{{ firstNameValidation }}</p>
 				<p class="contact-form__error">{{ lastNameValidation }}</p>
 				<p class="contact-form__error">{{ emailValidation }}</p>
 				<p class="contact-form__error">{{ messageValidation }}</p>
 		</div>
-
-		<form class="contact-form__input">	
 			<!-- <label for="name">Name</label> -->
 			<div class="contact-form__fullName">
 				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" />
@@ -93,6 +92,7 @@
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
+		padding: 0.8em;
 	}
 
 	.contact-form__title {
@@ -103,11 +103,11 @@
 		align-self: center;
 	}
 
-	.contact-form__error {
+	.contact-form__error p  {
 		position: relative;
 		color: darkred;
+		text-align: center;
 	}
-
 	.contact-form__input input {
 		position: relative;
 		display: flex;
@@ -118,16 +118,13 @@
 		margin-top: 0.5em;
 		width: 100%;
 	}
-
-	.contact-form__firstName {
-		margin-right: 0.5em;
-	}
-
 	.contact-form__fullName {
 		display: flex; 
 		align-items: center;
 	}
-
+	.contact-form__firstName {
+		margin-right: 0.5em;
+	}
 	.contact-form__message {
 		font-family: var(--main-font);
 		resize: none;
@@ -147,7 +144,7 @@
 		border-radius: 10px; 
 		cursor: pointer;
 		background-color: var(--light);
-		margin-top: 1em;
+		margin-top: 3.5em;
 	}
 
 	.contact-form__button:hover {
