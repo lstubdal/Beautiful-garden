@@ -1,4 +1,5 @@
 <template>
+  <Pin />
   <div class="toDo">
     <h2 class="toDo__title"> {{ title }}</h2>
     <div class="toDo__taskContainer"> 
@@ -24,10 +25,12 @@
 <script>
 
 import ToDoItem from '../components/ToDoItem.vue'
+import Pin from '../components/Pin.vue';
 
 export default {
   components: {
     ToDoItem,
+    Pin
   },
     data() {
       return {

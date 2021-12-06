@@ -1,6 +1,8 @@
 <template>  
     <div class="header">
-        <RouterLink :to="{ name: 'home' }" class="header__logo">Logo</RouterLink>
+        <RouterLink :to="{ name: 'home' }" class="header__logo">
+            <img class="header__logo-img" src="img/logo.png/" alt="flower logo"/>
+        </RouterLink>
         <nav class="header__nav">
             <RouterLink class="header__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>
         </nav>
@@ -24,12 +26,19 @@
         width: 100%;
         height: 8vh;
         background-color: var(--light);
-        padding: 30px;
+        padding: 10px;
     }
     .header__logo {
-        flex-grow: 1;
         text-decoration: none;
         color: var(--dark);
+    }
+    .header__logo-img {
+        width: 10%;
+        height: 10%;
+        padding: 0.5em;
+    }
+    .header__nav {
+        margin-left: -4em;
     }
     .header__page {
         padding-left: 15px;

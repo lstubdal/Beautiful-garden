@@ -2,12 +2,10 @@
   <div class="dashboard">
     <div class="dashboard__container">
       <h1 class="dashboard__component dashboard__title">
-        Beautiful <br />
-        garden
+        Beautiful <br /> garden 
+        <p class="dashboard__undertitle">By Sølvi &#38; Lotte</p>
       </h1>
-      <div class="dashboard__component">
-        <ToDoList />
-      </div>
+      <div class="dashboard__component"><ToDoList /></div>
       <div class="dashboard__component"><ContactForm /></div>
       <div class="dashboard__component"><Slideshow/></div>
       <div class="dashboard__component"><QuizApp/></div>
@@ -17,23 +15,21 @@
 </template>
 
 <script>
-import ToDoList from "../components/ToDo.vue";
-import ContactForm from "../components/ContactUs.vue"; 
-import Slideshow from "../components/Slideshow.vue";
-import QuizApp from '../components/QuizApp.vue';
-import Table from '../components/Table.vue';
+  import ToDoList from "../components/ToDo.vue";
+  import ContactForm from "../components/ContactUs.vue"; 
+  import Slideshow from "../components/Slideshow.vue";
+  import QuizApp from '../components/QuizApp.vue';
+  import Table from '../components/Table.vue';
 
-
-export default {
-  components: {
-    ToDoList,
-    ContactForm,
-    Slideshow,
-    QuizApp,
-    Table,
-
-  },
-};
+  export default {
+      components: {
+        ToDoList,
+        ContactForm,
+        Slideshow,
+        QuizApp,
+        Table,
+      },
+    };
 </script>
 
 <style>
@@ -52,14 +48,18 @@ export default {
   .dashboard__title {
     color: #F08383;
     font-size: 70px;
-    text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: var(--text-shadow), var(--text-border-around);
     text-align: center;
     padding: 6%;
   }
   .dashboard__undertitle {
-    font-size: 30px;
+    font-size: 1.3rem;
     text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
     padding: 5%;
+    color: black;
+  }
+  .dashboard__pin {
+    position:absolute;
   }
   .dashboard__container {
     display: grid;
@@ -78,13 +78,12 @@ export default {
     height: 97%;
   }
 
-
 /* ---- MEDIA QUERY ---- */
-
-@media screen and (max-width: 480px) {
+/* 
+@media screen and (max-width: 800px) {
 	.dashboard__container {
 		grid-template-columns: 1fr;	
 	  }
 
-  }
+  } */
 </style>

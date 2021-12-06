@@ -1,4 +1,5 @@
 <template>
+	<Pin />
 	<div class="contact-form">
 		<h2 class="contact-form__title">{{ title }}</h2>
 		<form class="contact-form__input">	
@@ -26,8 +27,12 @@
 
 <script>
 	// import FormInput from '../components/FormInput.vue'
+	import Pin from '../components/Pin.vue';
 
 	export default {
+		components: {
+			Pin
+		},
 
 		// components: {
 		// 	FormInput,

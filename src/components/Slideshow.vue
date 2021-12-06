@@ -1,4 +1,5 @@
 <template>
+	<Pin />
 	<div class="slideshow">
 		<div class="slideshow__buttons">
 			<button @click="previousImage" class="slideshow__button">
@@ -34,7 +35,12 @@
 </template>
 
 <script>
+	import Pin from '../components/Pin.vue';
+
 	export default {
+		components: {
+			Pin
+		},
 		data() {
 			return {
 				index: 0, 
@@ -79,6 +85,7 @@
 		height: 100%;
 		width: 100%;
 		position: relative;
+		z-index: -1;
 	}
 
 	.slideshow__buttons {

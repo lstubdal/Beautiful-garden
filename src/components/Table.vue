@@ -1,4 +1,5 @@
 <template>
+	<Pin />
 	<div class="sort-table">
 		<h2 class="sort-table__title"> {{ title }}</h2>
 		<table>
@@ -18,39 +19,14 @@
 </template>
 
 <script>
-	const flowerData = `[{
-  "type": "Slender Yellow Woodsorrel",
-  "date": "19/06/2021"
-}, {
-  "type": "Muskroot",
-  "date": "06/06/2021"
-}, {
-  "type": "Script Lichen",
-  "date": "17/08/2022"
-}, {
-  "type": "Proliferating Bulrush",
-  "date": "07/08/2021"
-}, {
-  "type": "Shrubby Yellowcrest",
-  "date": "11/12/2021"
-}, {
-  "type": "San Diego Bur Ragweed",
-  "date": "08/10/2021"
-}, {
-  "type": "Cuero De Sapo",
-  "date": "14/04/2022"
-}, {
-  "type": "Castle Lake Bedstraw",
-  "date": "21/05/2021"
-}, {
-  "type": "Splendid Feather Moss",
-  "date": "21/01/2022"
-}, {
-  "type": "Bolander's Onion",
-  "date": "19/07/2022"
-}]`;
+	const flowerData = `[{ "type": "Slender Yellow Woodsorrel", "date": "19/06/2021" }, { "type": "Muskroot", "date": "06/06/2021" }, { "type": "Script Lichen", "date": "17/08/2022" }, { "type": "Proliferating Bulrush", "date": "07/08/2021" }, { "type": "Shrubby Yellowcrest", "date": "11/12/2021" }, { "type": "San Diego Bur Ragweed", "date": "08/10/2021" }, { "type": "Cuero De Sapo", "date": "14/04/2022" }, { "type": "Castle Lake Bedstraw", "date": "21/05/2021" }, { "type": "Splendid Feather Moss", "date": "21/01/2022" }, { "type": "Bolander's Onion", "date": "19/07/2022" }]`;
+
+	import Pin from '../components/Pin.vue';
 
 	export default {
+		components: {
+			Pin
+		},
 		data() {
 			return {
 				title: 'all the flowers in the garden',

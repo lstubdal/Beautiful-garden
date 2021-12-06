@@ -1,4 +1,5 @@
 <template>
+    <Pin />
     <div class="quiz">
         <div v-if="!this.doneWithQuestions" >
             <div class="quiz__title">{{ this.title }}</div>
@@ -31,10 +32,12 @@
 <script>
 
     import QuizAlternative from '../components/QuizAlternative.vue';
+    import Pin from '../components/Pin.vue';
 
     export default {
         components: {
-            QuizAlternative
+            QuizAlternative,
+            Pin
         },
         data() {
             return {

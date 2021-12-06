@@ -1,7 +1,6 @@
 <template>
     <footer class="footer">
-        <RouterLink :to="{ name: 'home' }" class="footer__logo">f.logo</RouterLink>
-        <nav class="header__nav">
+        <nav class="footer__nav">
             <RouterLink class="footer__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>
         </nav>
     </footer>
@@ -35,6 +34,15 @@
         padding: 30px;
         color: var(--light);
         text-decoration: none;
+        width: 10%;  
+        background-color: red;
+
+    }
+    .footer__logo-img {
+        width: 10%;
+        height: 10%;
+        padding: 0.5em;
+        
     }
     .footer__page {
         font-family: arial;
