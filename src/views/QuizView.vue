@@ -1,5 +1,7 @@
 <template>
-    <QuizApp />
+    <div class="view__container">
+        <QuizApp />
+    </div>
 </template>
 
 <script>
@@ -13,5 +15,5 @@
 </script>
 
 <style>
-
+    @import '../style/viewContainer.css';
 </style>

@@ -1,5 +1,7 @@
 <template>
-    table
+    <div class="view__container">
+        table here
+    </div>
 </template>
 
 <script>
@@ -13,5 +15,5 @@
 </script>
 
 <style>
-
+    @import '../style/viewContainer.css';
 </style>

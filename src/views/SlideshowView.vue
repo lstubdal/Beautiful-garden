@@ -1,5 +1,5 @@
 <template>
-    <div class="slideshow__container">
+    <div class="view__container">
         <Slideshow />
     </div>
 </template>
@@ -16,8 +16,5 @@
 </script>
 
 <style>
-    .slideshow__container {
-        height: 85vh;
-        width: 100vw;
-    }
+    @import '../style/viewContainer.css';
 </style>

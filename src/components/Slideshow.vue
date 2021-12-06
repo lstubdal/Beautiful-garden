@@ -40,12 +40,12 @@
 				index: 0, 
 				showCaption: false,
 				slides: [
-					{ title: 'Sunflower', caption: 'Sunflower', file:  './assets/sunflower.jpg' },
-					{ title: 'Aster', caption: 'Aster', file:  './assets/aster.jpg' },
-					{ title: 'Daisy', caption: 'Daisy', file:  './assets/daisy.jpg' },
-					{ title: 'Peony', caption: 'Peony', file:  './assets/peony.jpg' },
-					{ title: 'Rose', caption: 'Rose', file:  './assets/rose.jpg' },
-					{ title: 'Tulip', caption: 'Tulip', file:  './assets/tulip.jpg' },
+					{ title: 'Sunflower', caption: 'Sunflower', file:  '/slideshow/sunflower.jpg' },
+					{ title: 'Aster', caption: 'Aster', file:  '/slideshow/aster.jpg' },
+					{ title: 'Daisy', caption: 'Daisy', file:  '/slideshow/daisy.jpg' },
+					{ title: 'Peony', caption: 'Peony', file:  '/slideshow/peony.jpg' },
+					{ title: 'Rose', caption: 'Rose', file:  '/slideshow/rose.jpg' },
+					{ title: 'Tulip', caption: 'Tulip', file:  '/public/slideshow/tulip.jpg' },
 				],
 			};
 		},
