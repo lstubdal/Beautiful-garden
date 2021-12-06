@@ -1,5 +1,5 @@
 <template>
-    <div class="contactUs__container">
+    <div class="view__container">
         <ContactUs />
     </div>
     
@@ -17,9 +17,5 @@
 </script>
 
 <style>
-    .contactUs__container {
-        height: 100vh;
-        width: 100vw;
-    }
-
+    @import '../style/viewContainer.css';
 </style>

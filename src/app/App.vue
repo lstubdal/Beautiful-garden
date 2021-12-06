@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+    @import "../style/font.css";
     @import "../style/reset.css";
     @import "../style/variables.css";
     @import "../style/style.css";

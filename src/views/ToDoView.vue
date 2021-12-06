@@ -1,5 +1,7 @@
 <template>
-    <div class="toDo__container"><ToDo /></div>
+    <div class="view__container">
+        <ToDo />
+    </div>
 </template>
 
 <script>
@@ -13,11 +15,5 @@
 </script>
 
 <style>
-    .toDo__container {
-        margin: 0 auto;
-        margin-top: 3vh;
-        margin-bottom: 3vh;
-        height: 70vh;
-        width: 45vw;
-    }
+    @import '../style/viewContainer.css';
 </style>

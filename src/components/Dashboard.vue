@@ -74,8 +74,17 @@ export default {
     column-gap: 2%;
   }
   .dashboard__component {
-    width: 100%;
-    height: 100%;
-    border: 2px solid rgb(141, 138, 141);
+    width: 97%;
+    height: 97%;
+  }
+
+
+/* ---- MEDIA QUERY ---- */
+
+@media screen and (max-width: 480px) {
+	.dashboard__container {
+		grid-template-columns: 1fr;	
+	  }
+
   }
 </style>
