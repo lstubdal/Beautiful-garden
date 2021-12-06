@@ -10,15 +10,15 @@
 		</div>
 
 		<form class="contact-form__input">	
-			<label for="name">Name</label>
+			<!-- <label for="name">Name</label> -->
 			<div class="contact-form__fullName">
 				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" />
 				
 				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" />
 			</div>
-			<label for="email">E-mail</label>
+			<!-- <label for="email">E-mail</label> -->
 			<input class="contact-form__email" type="email" placeholder="E-mail" v-model="form.email" />
-			<label for="message">Message</label>
+			<!-- <label for="message">Message</label> -->
 			<textarea class="contact-form__message" type="textarea" cols="1" placeholder="What do you need help with?" v-model="form.message" />
 		</form>
 		<button class="contact-form__button" @click.prevent="validateForm">Ask!</button> <!-- the submit event will no longer reload the page -->
