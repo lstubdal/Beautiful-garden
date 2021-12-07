@@ -14,7 +14,7 @@
 			</button>
 		</div>
 
-		<div class="slideshow__extra">
+		<div class="slideshow__information">
 			<button class="slideshow__button-caption" @click="showCaption =!showCaption"><svg width="25" height="25" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M22.0501 2.75626C11.3955 2.75626 2.75635 11.3954 2.75635 22.05C2.75635 32.7046 11.3955 41.3438 22.0501 41.3438C32.7047 41.3438 41.3438 32.7046 41.3438 22.05C41.3438 11.3954 32.7047 2.75626 22.0501 2.75626ZM22.0501 38.0707C13.2043 38.0707 6.02939 30.8958 6.02939 22.05C6.02939 13.2042 13.2043 6.0293 22.0501 6.0293C30.8959 6.0293 38.0708 13.2042 38.0708 22.05C38.0708 30.8958 30.8959 38.0707 22.0501 38.0707Z" fill="black"/>
 				<path d="M19.9829 14.4703C19.9829 15.0186 20.2007 15.5444 20.5884 15.932C20.976 16.3197 21.5018 16.5375 22.0501 16.5375C22.5984 16.5375 23.1241 16.3197 23.5118 15.932C23.8995 15.5444 24.1173 15.0186 24.1173 14.4703C24.1173 13.9221 23.8995 13.3963 23.5118 13.0086C23.1241 12.6209 22.5984 12.4031 22.0501 12.4031C21.5018 12.4031 20.976 12.6209 20.5884 13.0086C20.2007 13.3963 19.9829 13.9221 19.9829 14.4703V14.4703ZM23.0837 19.2938H21.0165C20.827 19.2938 20.672 19.4488 20.672 19.6383V31.3524C20.672 31.5418 20.827 31.6969 21.0165 31.6969H23.0837C23.2732 31.6969 23.4282 31.5418 23.4282 31.3524V19.6383C23.4282 19.4488 23.2732 19.2938 23.0837 19.2938Z" fill="black"/></svg>
@@ -26,10 +26,6 @@
 				<img class="slideshow__img" :src="currentSlide.file" :alt="currentSlide.title">
 				<figcaption v-if="showCaption" class="slideshow__caption">{{ currentSlide.caption }}</figcaption>
 			</figure>
-		</div>
-
-		<div class="slideshow__dots">
-			<button class="slideshow__dot" @click="goToIndex(index)" v-for="(slide, index) in slides" :aria-label="`Go to image ${index + 1}`"></button>
 		</div>
 	</div>
 </template>
@@ -77,7 +73,7 @@
 
 <style>
 	.slideshow {
-		background: #ecd0ff;
+		/* background: #ecd0ff; */
 		height: 100%;
 		width: 100%;
 		position: relative;
@@ -115,7 +111,7 @@
 	.slideshow__img {
 		width: 100%; 
 		height: 100%;	
-		object-fit: contain;
+		object-fit: cover;
 	}
 
 	.slideshow__caption {
@@ -129,7 +125,7 @@
 		background:#ddacfd;
 	}
 
-	.slideshow__extra {
+	.slideshow__information {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -139,7 +135,7 @@
 	.slideshow__button-caption {
 		border: none;
 		color: black;
-		background-color: #ecd0ff;
+		background: none;
 		margin-left: 0.5em;
 		margin-top: 0.5em;
 	}
@@ -158,30 +154,6 @@
 	.slideshow__button {
 		padding: 0.5em;
 		align-self: center;
-	}
-
-	.slideshow__dots {
-		position: absolute;
-		bottom: 0;
-		transform: translateY(100%);
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: center;
-		padding: 0.5em;
-		width: 100%;
-	}
-
-	.slideshow__dot {
-		--dot-size: 0.8em;
-		min-width: var(--dot-size);
-		min-height: var(--dot-size);
-		display: block;
-		background: #ddacfd;
-		border-radius: 100%;
-	}
-
-	.slideshow__dot + .slideshow__dot {
-		margin-left: 0.5em;
 	}
 
 	/* media query */ 
