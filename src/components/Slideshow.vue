@@ -122,7 +122,7 @@
 		text-align: center;
 		font-size: 1em;
 		padding: 0.5em;
-		background:#ddacfd;
+		background:#ecd0ff;
 	}
 
 	.slideshow__information {
