@@ -6,7 +6,7 @@
 			<thead>
 				<tr>
 					<td><button @click="sortBy('type')">Flower</button></td>  						
-					<td><button @click="sortBy('date')">Maintained</button></td>
+					<td><button @click="sortBy('date')">Last maintained</button></td>
 				</tr>
 			</thead>
 
@@ -30,7 +30,7 @@
 		components: {
 			Pin
 		},
-		
+
 		data() {
 			return {
 				title: "all the flowers in the garden",
@@ -125,6 +125,7 @@
 		border-radius: 10px;
 		padding: 0.5em;
 		background: white;
+		text-align: center;
 	}
 
 	button {
