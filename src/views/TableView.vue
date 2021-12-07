@@ -1,15 +1,15 @@
 <template>
     <div class="view__container">
-        table here
+        <Table />
     </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
+    import Table from '../components/Table.vue';
 
-            }
+    export default {
+        components: {
+            Table
         }
     }
 </script>
