@@ -22,17 +22,12 @@
 </template>
 
 <script>
-	// import FormInput from '../components/FormInput.vue'
 	import Pin from '../components/Pin.vue';
 
 	export default {
 		components: {
 			Pin
 		},
-
-		// components: {
-		// 	FormInput,
-		// }, 
 
 		data() {
 			return {
@@ -51,13 +46,9 @@
 			validateForm() {
 				if (this.form.firstName.length && this.form.lastName.length && this.form.email.length && this.form.message.length  ) {							// if 0, this form did not pass validation 
 					return this.error = 'Form sent!';				// if greater than 0, validation passed and form sent
-					// alert(`Thank you for contacting us, ${this.form.firstName}. We'll get back to you as soon as possible!`);
 				}
 				return this.error = 'Invalid form.';
 			},
-			// resetForm() {
-				
-			// }
 		},
 
 		computed: {
@@ -159,7 +150,3 @@
 		}
 	}
 </style>
-
-
-
-// Kilder: Scrimba & https://vuejs.org/v2/cookbook/form-validation.html
