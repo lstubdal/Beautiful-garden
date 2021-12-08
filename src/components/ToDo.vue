@@ -95,7 +95,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 70%;
+    height: 220px;
     width: 70%;
     position: relative; 
     border-radius: 8px;
@@ -125,6 +125,12 @@ export default {
     bottom: 0%;     /* fix: not at bottom when to many tasks */
     padding-left: 30px;
   }
+
+  @media screen and (max-width: 800px) {
+  .toDo__taskContainer {
+    height: 180px;
+  }
+}
 </style>
 
 

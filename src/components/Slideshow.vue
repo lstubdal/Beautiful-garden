@@ -21,7 +21,7 @@
 			</button>
 		</div>
 
-		<div class="slideshow__slides">
+		<div class="slideshow__slides">		<!-- lage eget componetn?? -->
 			<figure class="slideshow__slide">
 				<img class="slideshow__img" :src="currentSlide.file" :alt="currentSlide.title">
 				<figcaption v-if="showCaption" class="slideshow__caption">{{ currentSlide.caption }}</figcaption>
