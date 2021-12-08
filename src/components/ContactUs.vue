@@ -10,33 +10,24 @@
 				<p class="contact-form__error">{{ emailValidation }}</p>
 				<p class="contact-form__error">{{ messageValidation }}</p>
 		</div>
-			<!-- <label for="name">Name</label> -->
 			<div class="contact-form__fullName">
-				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" />
-				
+				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" />	
 				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" />
 			</div>
-			<!-- <label for="email">E-mail</label> -->
 			<input class="contact-form__email" type="email" placeholder="E-mail" v-model="form.email" />
-			<!-- <label for="message">Message</label> -->
 			<textarea class="contact-form__message" type="textarea" cols="1" placeholder="What do you need help with?" v-model="form.message" />
 		</form>
-		<button class="contact-form__button" @click.prevent="validateForm">Ask!</button> <!-- the submit event will no longer reload the page -->
+		<button class="contact-form__button" @click.prevent="validateForm">Ask!</button> <!-- Modifier: the submit event will no longer reload the page -->
 	</div> 	
 </template>
 
 <script>
-	// import FormInput from '../components/FormInput.vue'
 	import Pin from '../components/Pin.vue';
 
 	export default {
 		components: {
 			Pin
 		},
-
-		// components: {
-		// 	FormInput,
-		// }, 
 
 		data() {
 			return {
@@ -55,13 +46,9 @@
 			validateForm() {
 				if (this.form.firstName.length && this.form.lastName.length && this.form.email.length && this.form.message.length  ) {							// if 0, this form did not pass validation 
 					return this.error = 'Form sent!';				// if greater than 0, validation passed and form sent
-					// alert(`Thank you for contacting us, ${this.form.firstName}. We'll get back to you as soon as possible!`);
 				}
 				return this.error = 'Invalid form.';
 			},
-			resetForm() {
-				
-			}
 		},
 
 		computed: {
@@ -163,7 +150,3 @@
 		}
 	}
 </style>
-
-
-
-// https://vuejs.org/v2/cookbook/form-validation.html
