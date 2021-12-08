@@ -42,7 +42,7 @@
 			};
 		},
 
-		// lifecycle hook - created() is a function that does whhhhhat
+		// lifecycle hook - created() is a function
 		created() {
 			const query = this.$route.query;
 
@@ -120,12 +120,13 @@
 	}
 
 	table {
-		height: 70%;
+		height: 100px;
 		width: 80%;
 		border-radius: 10px;
 		padding: 0.5em;
 		background: white;
 		text-align: center;
+		overflow: scroll;
 	}
 
 	button {

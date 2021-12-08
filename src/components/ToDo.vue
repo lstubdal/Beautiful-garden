@@ -48,6 +48,7 @@ export default {
       return this.$store.getters.getNewTask;
     }  */   
   }, 
+   /* session  */
 
   methods: {
     addTask() {
@@ -122,7 +123,7 @@ export default {
     border-radius: 10px;
     border: 1px solid lightgray;
     position: absolute;         /* absolute in relation to toDo__taskContainer (parent) */
-    bottom: 0%;     /* fix: not at bottom when to many tasks */
+    bottom: 0;     /* fix: not at bottom when to many tasks */
     padding-left: 30px;
   }
 

@@ -5,7 +5,7 @@
         Beautiful <br /> garden 
         <p class="dashboard__undertitle">By Sølvi &#38; Lotte</p>
       </h1>
-      <div class="dashboard__component"><ToDo /></div>
+      <div class="dashboard__component"><ToDo /></div>  <!-- lage eget komponent med pin -->
       <div class="dashboard__component"><ContactForm /></div>
       <div class="dashboard__component"><Slideshow/></div>
       <div class="dashboard__component"><QuizApp/></div>
@@ -31,9 +31,6 @@
         <Table /> 
       </Collapsible>
     </div>
-
-
-
   </div>
 </template>
 

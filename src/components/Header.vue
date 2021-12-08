@@ -7,8 +7,8 @@
             <RouterLink class="header__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>
         </nav>
     </div>
-    
 </template>
+
 <script>
     export default {
         computed: {

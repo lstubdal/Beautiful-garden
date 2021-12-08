@@ -30,6 +30,11 @@
 </template>
 
 <script>
+const initialState = {
+    currentQuestion: 0,
+    totalScore: 0,
+    doneWithQuestions: false,       /* if question.length +1 === index */
+}
 
     import QuizAlternative from '../components/QuizAlternative.vue';
     import Pin from '../components/Pin.vue';
@@ -41,10 +46,8 @@
         },
         data() {
             return {
+                ...initialState,
                 title: 'time to learn about flowers',
-                currentQuestion: 0,
-                totalScore: 0,
-                doneWithQuestions: false,
                 questions: [
                 { 
                     id: 0,
@@ -104,11 +107,12 @@
                 }
             },
             resetQuiz() {      
-                this.doneWithQuestions = false;
+                this.doneWithQuestions = false; /*  .initialState.doneWithQuestions; - for å unngå gjentagelse */
                 this.currentQuestion = 0;
                 this.totalScore = 0;
             }
         }
+
 
 /*         computed: {
             id() {
