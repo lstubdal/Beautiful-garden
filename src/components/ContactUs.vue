@@ -49,6 +49,9 @@
 				}
 				return this.error = 'Invalid form.';
 			},
+			resetForm() {
+
+			}
 		},
 
 		computed: {
@@ -150,3 +153,6 @@
 		}
 	}
 </style>
+
+
+//Sources: Alejandro's code and Scrimba 
