@@ -79,7 +79,7 @@
     .header__page {
         padding-left: 15px;
         padding-right: 15px;
-        color: #F08383;
+        color: var(--main-color);
         text-decoration: none;
     }
 

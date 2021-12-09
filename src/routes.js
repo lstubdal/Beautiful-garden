@@ -9,7 +9,7 @@ import TableView from './views/TableView.vue';
 export default [
     {name: 'home',                  path: '/',                          component: Home },
     {name: 'To do list', 			path: '/to-do-list', 	            component: ToDoView },
-    {name: 'Help from experts', 	path: '/contact-experts', 	        component: ContactUsView},   // HUSK Å ENDRE POTET
+    {name: 'Help from experts', 	path: '/contact-experts', 	        component: ContactUsView},   
     {name: 'Flower slideshow', 		path: '/flower-slideshow', 	        component: SlideshowView }, 
     {name: 'Flower quiz', 		    path: '/flower-quiz', 	            component: QuizView },
     {name: 'Flower overview', 		path: '/flower-overview', 	        component: TableView },

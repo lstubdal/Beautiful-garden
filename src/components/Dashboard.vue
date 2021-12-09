@@ -69,7 +69,6 @@
   .dashboard {
     display: flex;
     justify-content: center;
-/*     height: 120vh; */
     width: 100vw;
   }
   .dashboard__titleContainer {
@@ -79,7 +78,7 @@
     align-items: center;
   }
   .dashboard__title {
-    color: #F08383;
+    color: var(--main-color);
     font-size: 70px;
     text-shadow: var(--text-shadow), var(--text-border-around);
     text-align: center;

@@ -1,5 +1,4 @@
 <template>
-	<Pin />
 	<div class="contact-form">
 		<h2 class="contact-form__title">{{ title }}</h2>
 		<form class="contact-form__input">	
@@ -22,13 +21,7 @@
 </template>
 
 <script>
-	import Pin from '../components/Pin.vue';
-
 	export default {
-		components: {
-			Pin
-		},
-
 		data() {
 			return {
 				title: 'help from flower experts',
@@ -60,16 +53,19 @@
 					alert('First name is required');
 				}
 			},
+
 			lastNameValidation: function () {
 				if ( ! this.form.lastName.length && this.error) {
 					alert('Last name is required');
 				}
 			},
+
 			emailValidation: function () {
 				if ( ! this.form.email.length && this.error) {
 					alert('E-mail is required');
 				}
 			},
+			
 			messageValidation: function () {
 				if ( ! this.form.message.length && this.error) {
 					alert('Message is required');
@@ -81,7 +77,6 @@
 
 <style>
 	.contact-form {
-		z-index: -3;
 		background: #FFDBB0;
 		height: 100%;
 		display: flex;
@@ -104,8 +99,8 @@
 		color: darkred;
 		text-align: center;
 	}
+
 	.contact-form__input input {
-		position: relative;
 		display: flex;
 		flex-direction: column;
 		border: none;

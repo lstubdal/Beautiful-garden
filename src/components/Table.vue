@@ -1,5 +1,4 @@
 <template>
-	<Pin />
 	<div class="sort-table">
 		<h2 class="sort-table__title"> {{ title }} </h2>
 		<table>
@@ -23,14 +22,9 @@
 </template>
 
 <script>
-	import Pin from '../components/Pin.vue';
-
 	const flowerData = `[{ "type": "Cuming's Lovegrass", "date": "06/08/2021" }, { "type": "Theobroma", "date": "10/08/2021" }, { "type": "Dotted Lichen", "date": "08/08/2021" }, { "type": "Celandine", "date": "19/08/2021" }, { "type": "Pineland Lobelia", "date": "07/08/2021" }, { "type": "Stebbins' Desertparsley", "date": "02/08/2021" }, { "type": "Cascade False Hellebore", "date": "04/08/2021" }, { "type": "Fritz's Zeuxine", "date": "13/08/2021" }, { "type": "Monardella", "date": "23/08/2021" }, { "type": "Everglades Buttonweed", "date": "24/08/2021" }] `;
+	
 	export default {
-		components: {
-			Pin
-		},
-
 		data() {
 			return {
 				title: "all the flowers in the garden",

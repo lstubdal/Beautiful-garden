@@ -40,11 +40,11 @@
         margin-left: 10%;
     }
     .toDo__button--done {
-        background-color: var(--toDo);
+        background-color: var(--toDo-color);
         border: 1px solid black;
     }
     .toDo__button:hover {
-        background-color: var(--toDo);
+        background-color: var(--toDo-color);
     }
     .toDo__taskText {
         display: flex;

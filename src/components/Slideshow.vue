@@ -1,5 +1,4 @@
 <template>
-
 	<div class="slideshow">
 		<div class="slideshow__buttons">
 			<button @click="previousImage" class="slideshow__button">

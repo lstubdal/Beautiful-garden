@@ -1,5 +1,4 @@
 <template>
-    <Pin />
     <div class="quiz">
         <div v-if="!this.doneWithQuestions" >
             <div class="quiz__title">{{ this.title }}</div>
@@ -30,23 +29,18 @@
 </template>
 
 <script>
-const initialState = {
-    currentQuestion: 0,
-    totalScore: 0,
-    doneWithQuestions: false,       /* if question.length +1 === index */
-}
-
     import QuizAlternative from '../components/QuizAlternative.vue';
-    import Pin from '../components/Pin.vue';
 
     export default {
         components: {
             QuizAlternative,
-            Pin
         },
+
         data() {
             return {
-                ...initialState,
+                currentQuestion: 0,
+                totalScore: 0,
+                doneWithQuestions: false,       /* if question.length +1 === index */
                 title: 'time to learn about flowers',
                 questions: [
                 { 
@@ -82,6 +76,7 @@ const initialState = {
             ]
             }
         },
+
         methods: {
             findUsersAnwer(alternative) {
                 const usersAnswer= this.questions[this.currentQuestion].alternatives.findIndex(currentAlternative => currentAlternative.id === alternative.id)     // find index to alternative user chose
@@ -91,12 +86,14 @@ const initialState = {
                 
                 this.checkAnswer(usersAnswer, correctAnswer);       
             },
+
             checkAnswer(usersAnswer, correctAnswer) {
                 if (usersAnswer === correctAnswer) {           // increase total point +1 if correct alternative
                     this.totalScore++;
                 }
                 this.nextQuestion();
             }, 
+
             nextQuestion() {
                 const lastQuestion = this.questions.length -1;
 
@@ -106,28 +103,13 @@ const initialState = {
                     this.doneWithQuestions = true;
                 }
             },
+            
             resetQuiz() {      
                 this.doneWithQuestions = false; /*  .initialState.doneWithQuestions; - for å unngå gjentagelse */
                 this.currentQuestion = 0;
                 this.totalScore = 0;
             }
         }
-
-
-/*         computed: {
-            id() {
-                return this.$store.getters.getId;
-            },
-            title() {
-                return this.$store.getters.getTitle;
-            },
-            questions() {
-                return this.$store.getters.getQuestion;
-            },
-            alternatives() {
-                return this.$store.getters.getAlternatives;
-            } 
-        } */
     }
 </script>
 

@@ -52,7 +52,7 @@
         padding-right: 15px;
     }
     .footer__page:hover {
-        color: #F08383;
+        color: var(--main-color);
         text-decoration: underline 2px solid;
     }
 </style>
