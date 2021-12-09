@@ -89,14 +89,15 @@ export default {
     font-size: 1.1em;
     font-family: var(--main-font);
     font-weight: bold;
-    margin-bottom: -3%;
+    padding: 0.2em;
   }
 
   .toDo__taskContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 220px;
+    height: 70%;
+    min-height: 210px;
     width: 70%;
     position: relative; 
     border-radius: 8px;
