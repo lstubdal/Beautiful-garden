@@ -2,7 +2,8 @@
     <div class="header">
 
         <RouterLink :to="{ name: 'home' }" class="header__logo">
-            <img class="header__logo-img" src="img/logo.png/" alt="flower logo"/>
+            LOGO
+            <!-- <img class="header__logo-img" src="img/logo.png" alt="flower logo"/> -->
         </RouterLink>
 
         <nav class="header__nav--mobile">
@@ -48,7 +49,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        height: 10%;
+        height: 10vh;
         background-color: var(--light);
     }
 
