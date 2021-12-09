@@ -37,8 +37,7 @@ export default {
   9. test på netlify før levering
   10. slette lock, modules, dist(?)
   11. reset form
-
-  12. Pin fjerne eller ikke fjerne? -> lage dashboard-component med pin (slot)
-  13. slideshow: lage slide component
+  12. toDo session
+  13. slideshow: lage slide component - klarte ikke
   14. border radius varible
  */
