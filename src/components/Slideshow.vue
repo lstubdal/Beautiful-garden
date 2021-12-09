@@ -98,11 +98,12 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%; 
-	}
+		height: 100%;
+		position: absolute;
+	} 
 
 	.slideshow__slide {
-		/* position: absolute; */
+		position: absolute;
 		width: 100%;
 		height: 100%; 
 	}
@@ -157,9 +158,13 @@
 
 	/* media query */ 
 	
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 800px) {
 		.slideshow {
 			height: 60vh;
 		}
+
+		.slideshow__slide--mobile {
+		position: relative; 
+	}
 	}
 </style>

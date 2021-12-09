@@ -148,6 +148,10 @@ const initialState = {
         text-align: center; 
     }
     .quiz__title {
+        padding-top: 0.2em;
+		font-size: 1.1em;
+		font-family: var(--main-font);
+		font-weight: bold;
         text-align: center;
     }
     .quiz__question {
