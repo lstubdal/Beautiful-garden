@@ -6,7 +6,7 @@
              alt="hamburger menu"/>
         </button>
 
-        <nav class="hamburger__nav" v-if="this.hamburgerVisible">
+        <nav class="hamburger__nav" v-if="this.hamburgerVisible">   <!-- show menu when hamburger button clicked -->
             <ul>
                 <li>
                     <RouterLink class="hamburger__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>
@@ -75,6 +75,4 @@
         color: var(--light);
         text-decoration: underline solid 2px var(--light);
     }
-
-    
 </style>

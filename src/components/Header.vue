@@ -2,8 +2,7 @@
     <div class="header">
 
         <RouterLink :to="{ name: 'home' }" class="header__logo">
-            LOGO
-            <!-- <img class="header__logo-img" src="img/logo.png" alt="flower logo"/> -->
+            <img class="header__logo-img" src="../../public/img/logo.svg" alt="flower logo"/>
         </RouterLink>
 
         <nav class="header__nav--mobile">
@@ -53,16 +52,11 @@
         background-color: var(--light);
     }
 
-    .header__logo {
-        text-decoration: none;
-        color: var(--dark);
-    }
-
     .header__logo-img {
-        width: 10%;
-        height: 10%;
+        width: 90%;
+        height: 90%;
         padding: 0.5em;
-    }
+    } 
 
     .header__list {
         list-style: none;
@@ -91,9 +85,6 @@
 
     /* ---- MEDIA QUERY ---- */
     @media  screen and (max-width: 1140px) {
-        .header {
-
-        }
         .header__nav--mobile {
             list-style: none;
             display: block;

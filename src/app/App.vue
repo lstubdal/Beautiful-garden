@@ -28,7 +28,7 @@ export default {
   1. hamburger menu - DONE
   2. collapsible min-height toDo component - DONE
   3. formatering
-  4. slette kode som ikke brukes (store, modules etc...)
+  4. slette kode som ikke brukes (store, modules etc...) - DONE
   5. legge inn kommentarer
   6. fikse table
   7. universiell utformin (aria labels)

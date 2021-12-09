@@ -6,7 +6,7 @@
             <div :class="`toDo__taskText ${task.done ? 'toDo__taskText--done' : ''}`">{{ task.text }}</div>
             
             <button @click="emitRemove" class="toDo__remove" aria-label="remove">
-                <img src="../../public/img/trashIcon.png" alt="trash icon">
+                <img src="../../public/img/delete.svg" alt="trash icon">
             </button>
       </div>  
 </template>
