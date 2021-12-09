@@ -17,5 +17,5 @@
 </script>
 
 <style>
-    @import '../style/viewContainer.css';
+    @import '../style/style.css';
 </style>

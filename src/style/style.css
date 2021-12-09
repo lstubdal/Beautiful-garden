@@ -2,9 +2,15 @@ body {
 	background-color: var(--dark);
 	font-size: 16px;
 	font-family: var(--main-font);
-
 	background-image: url('../../public/img/background.jpg');
     background-size: cover;
 }
 
-
+/* styling for ...View.vue files */
+.view__container {
+    margin: 0 auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    height: 70vh;
+    width: 45vw;
+}

@@ -10,6 +10,7 @@ export default {
                 {title: 'Flower slideshow', id: 'flower-slideshow'},
                 {title: 'Flower quiz', id: 'flower-quiz'},
                 {title: 'Flower overview', id: 'flower-overview'}
+                
             ]
         }
     },

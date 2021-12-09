@@ -81,6 +81,7 @@
 
 <style>
 	.contact-form {
+		z-index: -3;
 		background: #FFDBB0;
 		height: 100%;
 		display: flex;
