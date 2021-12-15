@@ -1,6 +1,5 @@
 <template>  
     <div class="header">
-
         <RouterLink :to="{ name: 'home' }" class="header__logo">
             <img class="header__logo-img" src="../../public/img/logo.svg" alt="flower logo"/>
         </RouterLink>
@@ -29,15 +28,9 @@
 
         computed: {
             navigationPages() {
-                return this.$store.getters.getPages;        // get logic from getPages in store.js
+                return this.$store.getters.getPages;        // get logic from getPages method in store.js
             }
         },
-
-        methods: {
-            getNavigaton() {
-                return 
-            }
-        }
     }
 </script>
 
@@ -61,12 +54,15 @@
     .header__list {
         list-style: none;
     }
+
     .header__nav {
         width: 70%;
     }
+
     .header__nav li {
         list-style: none;
     }
+
     .header__nav--mobile {
         display: none;
     }
@@ -82,7 +78,6 @@
         text-decoration: underline solid 2px;
     }
 
-
     /* ---- MEDIA QUERY ---- */
     @media  screen and (max-width: 1140px) {
         .header__nav--mobile {
@@ -95,5 +90,4 @@
             display: none;
         }
     }
-
 </style>
