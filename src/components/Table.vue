@@ -143,6 +143,7 @@
 		font-size: 1em;
 		font-weight: bold;
 		margin: 0.5em;
+		cursor: pointer;
 	}
 </style>
 

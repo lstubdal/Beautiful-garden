@@ -2,16 +2,16 @@
 	<div class="slideshow">
 		<div class="slideshow__buttons">
 			<button @click="previousImage" class="slideshow__button">
-				<img src="img/previous.svg" alt="previous button"/>
+				<img src="../../public/img/previous.svg" alt="previous button"/>
 			</button>
 			<button @click="nextImage" class="slideshow__button">
-				<img src="img/next.svg" alt="next button"/>
+				<img src="../../public/img/next.svg" alt="next button"/>
 			</button>
 		</div>
 
 		<div class="slideshow__information">
 			<button class="slideshow__button-caption" @click="showCaption =!showCaption">
-				<img src="img/information.svg" alt="information button"/>
+				<img src="../../public/img/information.svg" alt="information button"/>
 			</button>
 		</div>
 

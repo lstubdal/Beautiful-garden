@@ -2,7 +2,7 @@
 	<div class="collapsible">
         <div class="collapsible__top">
 			<button @click="showComponent" :class="`collapsible__button ${ !this.collapsed ? 'collapsible__button--rotated' : ''}`">
-				<img src="img/arrow.svg" alt="white arrow"/>
+				<img src="../../public/img/arrow.svg" alt="white arrow"/>
 			</button>
 			<div class="collapsible__title">{{ title }}</div>
         </div>
