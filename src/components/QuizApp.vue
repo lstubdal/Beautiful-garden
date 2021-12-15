@@ -1,28 +1,27 @@
 <template>
     <div class="quiz">
-        <div v-if="!this.doneWithQuestions" >
-            <div class="quiz__title">{{ this.title }}</div>
-            <div class="quiz__questionNumber"><i><u>question: {{ questions[currentQuestion].id +1 }}</u></i></div>
+        <div v-if="!this.doneWithQuestions" >                   <!-- while questions left in questions-array, show them -->
+            <div class="quiz__title">{{ this.title }}</div>       
+            <div class="quiz__questionNumber">question: {{ questions[currentQuestion].id +1 }}</div>    <!-- +1 becuase id starts at 0 -->
             <div class="quiz__question"> {{ questions[currentQuestion].text }}</div>
 
-            <QuizAlternative 
-                v-for="alternative in questions[currentQuestion].alternatives"
+            <!-- @answer custom event calls on findusersAnswer method -->
+            <QuizAlternative    
+                v-for="alternative in questions[currentQuestion].alternatives"     
                 @answer="findUsersAnwer"
                 :alternative="alternative"  
                 />
         </div>
 
-        <div  v-else="this.doneWithQuestions" >
+        <div v-else="this.doneWithQuestions" >      <!-- show results if done with questoins -->
             <div class="quiz__result">
                 <div class="quiz__score">
                     Your total score is {{ this.totalScore}} / 3
                 </div>
-                <div v-if="this.totalScore === 0"> Not good, you suck </div>
-                <div v-if="this.totalScore === 1"> Come on, you can do better </div>
-                <div v-if="this.totalScore === 2"> Not bad </div>
-                <div v-if="this.totalScore === 3"> Perfect! smartass</div>
+                
+                <div> {{ resultsMessage }}</div>   
 
-                <button @click="resetQuiz" class="quiz__resetButton">Start over</button>
+                <button @click="resetQuiz" class="quiz__resetButton" aria-label="start over button">Start over</button>
             </div>
         </div>
     </div>
@@ -40,7 +39,7 @@
             return {
                 currentQuestion: 0,
                 totalScore: 0,
-                doneWithQuestions: false,       /* if question.length +1 === index */
+                doneWithQuestions: false,       
                 title: 'time to learn about flowers',
                 questions: [
                 { 
@@ -73,31 +72,45 @@
                                 ],
                     correctAnswerIndex: 2
                 },
+            ], 
+
+            messages: [
+                'Noot good, you suck',
+                'Come on, you can do better',
+                'Not bad',
+                'Perfect you smartass'
             ]
+            }
+        },
+
+        computed: {
+            resultsMessage() {      /* display message to user based on score */
+                if (this.totalScore === 0) {return this.messages[0]}
+                if (this.totalScore === 1) {return this.messages[1]}
+                if (this.totalScore === 2) {return this.messages[2]}
+                if (this.totalScore === 3) {return this.messages[3]}
             }
         },
 
         methods: {
             findUsersAnwer(alternative) {
-                const usersAnswer= this.questions[this.currentQuestion].alternatives.findIndex(currentAlternative => currentAlternative.id === alternative.id)     // find index to alternative user chose
-                const correctAnswer = this.questions[this.currentQuestion].correctAnswerIndex;   
-                console.log('uA: ', usersAnswer)      
-                console.log('cA: ', correctAnswer)                                                            // get the the index of the correct answer to question
+                const usersAnswer= this.questions[this.currentQuestion].alternatives.findIndex(currentAlternative => currentAlternative.id === alternative.id)     /*  find index to the alternative user clicked */
+                const correctAnswer = this.questions[this.currentQuestion].correctAnswerIndex;                                                                      /* get correct answer from variable in questions array */
                 
                 this.checkAnswer(usersAnswer, correctAnswer);       
             },
 
-            checkAnswer(usersAnswer, correctAnswer) {
-                if (usersAnswer === correctAnswer) {           // increase total point +1 if correct alternative
+            checkAnswer(usersAnswer, correctAnswer) {           /* compare user's answer and correct answer */
+                if (usersAnswer === correctAnswer) {            /* increase total point +1 if correct alternative */
                     this.totalScore++;
                 }
-                this.nextQuestion();
+                this.nextQuestion();                            /* move on to next question */
             }, 
 
             nextQuestion() {
                 const lastQuestion = this.questions.length -1;
 
-                if (this.currentQuestion != lastQuestion) {    // next question as long there is questions in the list
+                if (this.currentQuestion != lastQuestion) {     /* next question while there are uestions in list */
                     this.currentQuestion++;
                 } else {
                     this.doneWithQuestions = true;
@@ -105,7 +118,7 @@
             },
             
             resetQuiz() {      
-                this.doneWithQuestions = false; /*  .initialState.doneWithQuestions; - for å unngå gjentagelse */
+                this.doneWithQuestions = false; /*  reset quiz values if user wants to retry quiz */
                 this.currentQuestion = 0;
                 this.totalScore = 0;
             }
@@ -123,12 +136,16 @@
         height: 100%;
         background-color: #D0E5E8;
     }
+
     .quiz__questionNumber {
         font-family: arial;
         font-size: 1.1em;
         padding-top: 20px;    
         text-align: center; 
+        font-style: italic;
+        text-decoration: underline;
     }
+
     .quiz__title {
         padding-top: 0.2em;
 		font-size: 1.1em;
@@ -136,6 +153,7 @@
 		font-weight: bold;
         text-align: center;
     }
+
     .quiz__question {
         font-family: arial;
         font-size: 1.3em;
@@ -143,6 +161,7 @@
         text-align: center;
      
     }
+
     .quiz__result {
         display: flex;
         flex-direction: column;
@@ -150,14 +169,17 @@
         align-items: center;
         height: 100%;   
     }
+
     .quiz__score {
         font-size: 1.4em;
         font-family: arial;
         padding: 10px;
     }
+
     .quiz__feedback {
         font-size: 1.1em;
     }
+
     .quiz__resetButton {
         margin-top: 20px;
         background-color: white;
@@ -167,6 +189,7 @@
         border: 1px solid black;
         border-radius: 4px;
     }
+
     .quiz__resetButton:hover {
         background-color: rgb(234, 240, 207);
     }

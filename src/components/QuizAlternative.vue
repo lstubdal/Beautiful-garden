@@ -7,14 +7,14 @@
 <script>
     export default {
         props: {      
-             alternative: {         
+             alternative: {         /* create alternative prop to give value from questions array in quizApp.vue */
                  type: Object
              },
         },
 
         methods: {
             emitAnswer() {
-                this.$emit('answer', this.alternative);  /* create event: 'event name', and return the alterntaive-object that triggered emit(event)) */ 
+                this.$emit('answer', this.alternative);  /* create event: 'event name', and return the alterntaive-object that triggered emit(event)) - create connection between quizAlternaive in quizApp.vue */ 
             }
         }
     }
