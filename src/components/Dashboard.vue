@@ -114,29 +114,31 @@
     width: 97%;
     height: 97%;
   }
-  
+
   .dashboard__component--mobile {
     display: none;
   }
 
-
 /* ---- MEDIA QUERY ---- */
-
 @media screen and (max-width: 800px) {
   .dashboard {
     flex-direction: column;
   }
+
 	.dashboard__container {
 		display: flex;
     flex-direction: column;
     justify-content: center;	
 	}
+
   .dashboard__component {
     display: none;
   }
+
   .dashboard__component--mobile {
     display: block;
   }
+  
   .dashboard__title {
     padding: 0;
     margin-top: 1em;
