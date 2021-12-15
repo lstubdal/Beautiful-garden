@@ -1,6 +1,6 @@
 <template>
     <div class="hamburger">
-        <button @click="displayHamburger">
+        <button @click="displayHamburger" aria-label="hamburger menu">
             <img class="hamburger__img" 
              src="/img/hamburger.svg" 
              alt="hamburger menu"/>
@@ -9,32 +9,31 @@
         <nav class="hamburger__nav" v-if="this.hamburgerVisible">   <!-- show menu when hamburger button clicked -->
             <ul>
                 <li>
-                    <RouterLink class="hamburger__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>
+                    <RouterLink class="hamburger__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>    <!-- same navigation logikk as header and footer -->
                 </li>
             </ul> 
         </nav>
     </div>
-    <slot />
 </template>
 
 <script>
     export default {
         computed: {
             navigationPages() {
-                return this.$store.getters.getPages;
+                return this.$store.getters.getPages;        /* same logic as header and footer */
             }
         },
 
         data() {
             return {
-                hamburgerVisible: false
+                hamburgerVisible: false     /* variable to controll hamburger status */
                 
             }
         },
         
         methods: {
             displayHamburger() {
-                this.hamburgerVisible = !this.hamburgerVisible
+                this.hamburgerVisible = !this.hamburgerVisible         /* switch variable status based on hamburger is clicked or not */
             }
         }
     }
