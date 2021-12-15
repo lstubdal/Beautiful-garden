@@ -2,7 +2,7 @@
     <div class="header">
 
         <RouterLink :to="{ name: 'home' }" class="header__logo">
-            <img class="header__logo-img" src="../../public/img/logo.svg" alt="flower logo"/>
+            <img class="header__logo-img" src="img/logo.svg" alt="flower logo"/>
         </RouterLink>
 
         <nav class="header__nav--mobile">
