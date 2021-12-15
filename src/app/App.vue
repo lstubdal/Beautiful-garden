@@ -1,19 +1,19 @@
 <template>
   <Header/>
-  <RouterView />    <!-- show dashboard -->
+  <RouterView />    <!-- shows dashboard -->
   <Footer/>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";  
+  import Header from "../components/Header.vue";
+  import Footer from "../components/Footer.vue";  
 
-export default {
-  components: {
-    Header,
-    Footer
-  },
-};
+  export default {
+    components: {
+      Header,
+      Footer
+    },
+  };
 </script>
 
 <style>
@@ -22,22 +22,3 @@ export default {
     @import "../style/variables.css";
     @import "../style/style.css";
 </style>
-
-
-/* TO DO
-  1. hamburger menu - DONE
-  2. collapsible min-height toDo component - DONE
-  3. formatering
-  4. slette kode som ikke brukes (store, modules etc...) - DONE
-  5. legge inn kommentarer
-  6. fikse table
-  7. universiell utformin (aria labels)
-  8. import font på riktig måte
-
-  9. test på netlify før levering
-  10. slette lock, modules, dist(?)
-  11. reset form
-  12. toDo session
-  13. slideshow: lage slide component - klarte ikke
-  14. border radius varible
- */
