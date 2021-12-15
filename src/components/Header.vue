@@ -4,14 +4,14 @@
             <img class="header__logo-img" src="../../public/img/logo.svg" alt="flower logo"/>
         </RouterLink>
 
-        <nav class="header__nav--mobile">
+        <nav class="header__nav--mobile">       <!-- get hamburger component, only visible from 800px screen width -->
             <HamburgerMenu />
         </nav>
 
         <nav class="header__nav">
             <ul>
                 <li >
-                    <RouterLink class="header__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>
+                    <RouterLink class="header__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>   <!-- Use routerlink to navigate, using :to prop to specify location -->
                 </li>
             </ul>
         </nav>
@@ -30,7 +30,7 @@
             navigationPages() {
                 return this.$store.getters.getPages;        // get logic from getPages method in store.js
             }
-        },
+        }
     }
 </script>
 
