@@ -1,12 +1,10 @@
 <template>
-    <div class="view__container">
+    <div class="viewContainer">
         <ContactUs />
-    </div>
-    
+    </div> 
 </template>
 
 <script>
-
     import ContactUs from '../components/ContactUs.vue';
 
     export default {

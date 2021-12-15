@@ -1,11 +1,11 @@
 
 <template>
         <div class="toDo__task">   
-           <button @click="emitDone" :class="`toDo__button ${task.done ? 'toDo__button--done' : ''}`" aria-label="done"></button> 
+           <button @click="emitDone" :class="`toDo__button ${task.done ? 'toDo__button--done' : ''}`" aria-label="done"></button>       <!-- change styling on task button if task is complete -->
             
-            <div :class="`toDo__taskText ${task.done ? 'toDo__taskText--done' : ''}`">{{ task.text }}</div>
+            <div :class="`toDo__taskText ${task.done ? 'toDo__taskText--done' : ''}`">{{ task.text }}</div>                             <!-- change styling on task text if done -->
             
-            <button @click="emitRemove" class="toDo__remove" aria-label="remove">
+            <button @click="emitRemove" class="toDo__remove" aria-label="remove">   
                 <img src="../../public/img/delete.svg" alt="trash icon">
             </button>
       </div>  
@@ -18,12 +18,14 @@
                  type: Object
              },
         },
+
         methods: {
             emitDone() {
-                this.$emit('done-task', this.task)          // send object that triggered event
+                this.$emit('done-task', this.task)         /* create event: 'event name', and return object that triggered emit) */
             },
+
             emitRemove() {                   
-                this.$emit('remove-task', this.task)        // create event: 'event name', what to return (task obj that triggered emit) 
+                this.$emit('remove-task', this.task)       
 
             }
         }
@@ -39,13 +41,16 @@
         border: 1.5px solid black;
         margin-left: 10%;
     }
+
     .toDo__button--done {
         background-color: var(--toDo-color);
         border: 1px solid black;
     }
+
     .toDo__button:hover {
         background-color: var(--toDo-color);
     }
+    
     .toDo__taskText {
         display: flex;
         flex-wrap: wrap;

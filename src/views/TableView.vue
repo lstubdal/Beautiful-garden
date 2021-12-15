@@ -1,5 +1,5 @@
 <template>
-    <div class="view__container">
+    <div class="viewContainer">
         <Table />
     </div>
 </template>

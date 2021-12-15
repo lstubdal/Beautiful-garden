@@ -1,16 +1,17 @@
 <template>
 	<div class="slideshow">
 		<div class="slideshow__buttons">
-			<button @click="previousImage" class="slideshow__button">
+			<button @click="previousImage" class="slideshow__button" aria-label="previous button">
 				<img src="../../public/img/previous.svg" alt="previous button"/>
 			</button>
-			<button @click="nextImage" class="slideshow__button">
+
+			<button @click="nextImage" class="slideshow__button" aria-label="next button">
 				<img src="../../public/img/next.svg" alt="next button"/>
 			</button>
 		</div>
 
 		<div class="slideshow__information">
-			<button class="slideshow__button-caption" @click="showCaption =!showCaption">
+			<button class="slideshow__button-caption" @click="showCaption =!showCaption" aria-label="image information button">
 				<img src="../../public/img/information.svg" alt="information button"/>
 			</button>
 		</div>
@@ -151,7 +152,6 @@
 	}
 
 	/* media query */ 
-	
 	@media screen and (max-width: 800px) {
 		.slideshow {
 			height: 60vh;
@@ -159,6 +159,6 @@
 
 		.slideshow__slide--mobile {
 		position: relative; 
-	}
+		}
 	}
 </style>

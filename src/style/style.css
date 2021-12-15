@@ -7,7 +7,7 @@ body {
 }
 
 /* styling for ...View.vue files */
-.view__container {
+.viewContainer {
     margin: 0 auto;
     margin-top: 3vh;
     margin-bottom: 3vh;

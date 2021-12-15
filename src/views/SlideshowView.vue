@@ -1,11 +1,10 @@
 <template>
-    <div class="view__container">
+    <div class="viewContainer">
         <Slideshow />
     </div>
 </template>
 
 <script>
-
     import Slideshow from '../components/Slideshow.vue';
     
      export default {

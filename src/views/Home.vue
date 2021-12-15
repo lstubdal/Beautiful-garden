@@ -1,10 +1,9 @@
 <template>
-    <Dashboard/>
+    <Dashboard/>        <!-- get component -->
 </template>
 
 <script>
-
-    import Dashboard from '../components/Dashboard.vue';        // import dashboard to home
+    import Dashboard from '../components/Dashboard.vue';        /* import dashboard to home */
 
     export default {
         components: {
@@ -14,4 +13,5 @@
 </script>
 
 <style>
+    @import '../style/style.css';        /* import stylesheet */
 </style>
