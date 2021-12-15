@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
         <nav class="footer__nav">
-            <RouterLink class="footer__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>   <!-- Use routerlink to navigate, using :to prop to specify location -->
+            <RouterLink class="footer__page" v-for="page in navigationPages" :to="{ name: page.title, params: {page_id: page.id }}">{{ page.title }}</RouterLink>   <!-- Same navigation logic as header -->
         </nav>
     </footer>
 </template>
@@ -50,7 +50,7 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-    
+
     .footer__page:hover {
         color: var(--main-color);
         text-decoration: underline 2px solid;
