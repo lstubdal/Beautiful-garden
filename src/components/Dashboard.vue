@@ -5,7 +5,8 @@
         Beautiful <br /> garden 
         <p class="dashboard__undertitle">By Sølvi &#38; Lotte</p>
       </h1>
-      <div class="dashboard__component"><ToDo /></div>  <!-- lage eget komponent med pin -->
+
+      <div class="dashboard__component"><ToDo /></div>   
       <div class="dashboard__component"><ContactForm /></div>
       <div class="dashboard__component"><Slideshow/></div>
       <div class="dashboard__component"><QuizApp/></div>
@@ -51,6 +52,7 @@
         Table,
         Collapsible
       },
+
       data() {
         return {
           componentTitles: { 
@@ -71,12 +73,14 @@
     justify-content: center;
     width: 100vw;
   }
+
   .dashboard__titleContainer {
     display: flex;	
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .dashboard__title {
     color: var(--main-color);
     font-size: 70px;
@@ -84,15 +88,14 @@
     text-align: center;
     padding: 6%;
   }
+
   .dashboard__undertitle {
     font-size: 1.3rem;
     text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
     padding: 5%;
     color: black;
   }
-  .dashboard__pin {
-    position:absolute;
-  }
+
   .dashboard__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -105,11 +108,13 @@
     row-gap: 2%;
     column-gap: 2%;
   }
+
   .dashboard__component {
     display: block;
     width: 97%;
     height: 97%;
   }
+  
   .dashboard__component--mobile {
     display: none;
   }
