@@ -1,14 +1,15 @@
 <template>
 	<div class="collapsible">
         <div class="collapsible__top">
-			<button @click="showComponent" :class="`collapsible__button ${ !this.collapsed ? 'collapsible__button--rotated' : ''}`">
+			<button @click="showComponent" :class="`collapsible__button ${ !this.collapsed ? 'collapsible__button--rotated' : ''}`">		<!-- change styling if not collapsed -->
 				<img src="../../public/img/arrow.svg" alt="white arrow"/>
 			</button>
+			
 			<div class="collapsible__title">{{ title }}</div>
         </div>
 
-		<div class="collapsible__component" v-if="!this.collapsed">
-			<slot />		
+		<div class="collapsible__component" v-if="!this.collapsed">		<!-- view component if not collapsed -->
+			<slot />													<!-- placeholder for component (data) -->
 		</div>
 	</div>
 </template>
@@ -16,7 +17,7 @@
 <script>
 	export default {
 		props: {
-            title: {
+            title: {			/* Title as prop so give them component name in dashboard.vue */
                 type: String	
 			}
 		},
