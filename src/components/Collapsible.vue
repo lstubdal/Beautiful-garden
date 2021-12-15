@@ -1,7 +1,7 @@
 <template>
 	<div class="collapsible">
         <div class="collapsible__top">
-			<button @click="showComponent" :class="`collapsible__button ${ !this.collapsed ? 'collapsible__button--rotated' : ''}`">		<!-- change styling if not collapsed -->
+			<button @click="showComponent" :class="`collapsible__button ${ !this.collapsed ? 'collapsible__button--rotated' : ''}`" aria-label="collapsible button">		<!-- change styling if not collapsed -->
 				<img src="../../public/img/arrow.svg" alt="white arrow"/>
 			</button>
 			

@@ -1,11 +1,11 @@
 
 <template>
         <div class="toDo__task">   
-           <button @click="emitDone" :class="`toDo__button ${task.done ? 'toDo__button--done' : ''}`" aria-label="done"></button>       <!-- change styling on task button if task is complete -->
+           <button @click="emitDone" :class="`toDo__button ${task.done ? 'toDo__button--done' : ''}`" aria-label="done button"></button>       <!-- change styling on task button if task is complete -->
             
             <div :class="`toDo__taskText ${task.done ? 'toDo__taskText--done' : ''}`">{{ task.text }}</div>                             <!-- change styling on task text if done -->
             
-            <button @click="emitRemove" class="toDo__remove" aria-label="remove">   
+            <button @click="emitRemove" class="toDo__remove" aria-label="remove button">   
                 <img src="../../public/img/delete.svg" alt="trash icon">
             </button>
       </div>  
@@ -50,7 +50,7 @@
     .toDo__button:hover {
         background-color: var(--toDo-color);
     }
-    
+
     .toDo__taskText {
         display: flex;
         flex-wrap: wrap;

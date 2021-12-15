@@ -4,19 +4,23 @@
 		<form class="contact-form__input">	
 			<div class="contact-form__error">
 				<p>{{ error }}</p>
+
 				<p class="contact-form__error">{{ firstNameValidation }}</p>
 				<p class="contact-form__error">{{ lastNameValidation }}</p>
 				<p class="contact-form__error">{{ emailValidation }}</p>
 				<p class="contact-form__error">{{ messageValidation }}</p>
-		</div>
-			<div class="contact-form__fullName">
-				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" />	
-				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" />
 			</div>
-			<input class="contact-form__email" type="email" placeholder="E-mail" v-model="form.email" />
-			<textarea class="contact-form__message" type="textarea" cols="1" placeholder="What do you need help with?" v-model="form.message" />
+
+			<div class="contact-form__fullName">
+				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" label="First name"/>	
+				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" label="Last name"/>
+			</div>
+
+			<input class="contact-form__email" type="email" placeholder="E-mail" v-model="form.email" label="mail"/>
+			<textarea class="contact-form__message" type="textarea" cols="1" placeholder="What do you need help with?" v-model="form.message" label="text field"/>
 		</form>
-		<button class="contact-form__button" @click.prevent="validateForm">Ask!</button> <!-- Modifier: the submit event will no longer reload the page -->
+
+		<button class="contact-form__button" @click.prevent="validateForm" aria-label="submit button">Ask!</button> <!-- Modifier: the submit event will no longer reload the page -->
 	</div> 	
 </template>
 
@@ -113,9 +117,11 @@
 		display: flex; 
 		align-items: center;
 	}
+
 	.contact-form__firstName {
 		margin-right: 0.5em;
 	}
+
 	.contact-form__message {
 		font-family: var(--main-font);
 		resize: none;
@@ -141,8 +147,8 @@
 	.contact-form__button:hover {
 		box-shadow: orange 0 0.5em 0.5em -0.5em;
 	}
+
 	/* media query */ 
-	
 	@media screen and (max-width: 480px) {
 		.contact-form {
 			height: 60vh;
@@ -151,4 +157,4 @@
 </style>
 
 
-//Sources: Alejandro's code and Scrimba 
+/* Sources: Alejandro's code and Scrimba  */

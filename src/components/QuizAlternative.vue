@@ -1,6 +1,6 @@
 <template>
      <div class="quiz__alternativeContainer">
-        <button @click="emitAnswer" class="quiz__alternative" aria-label="alternative">{{ alternative.text }}</button>  <!-- when button clicked, calls on method that creates cutom made event -->
+        <button @click="emitAnswer" class="quiz__alternative" aria-label="alternative button">{{ alternative.text }}</button>  <!-- when button clicked, calls on method that creates cutom made event -->
     </div>
 </template>
 
