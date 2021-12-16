@@ -10,10 +10,6 @@
 				<p class="contact-form__error">{{ emailValidation }}</p>
 				<p class="contact-form__error">{{ messageValidation }}</p>
 			</div>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 			<div class="contact-form__fullName">
 				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" label="First name"/>	
 				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" label="Last name"/>
