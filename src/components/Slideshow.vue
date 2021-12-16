@@ -48,6 +48,7 @@
 			}
 		},
 
+		
 		methods: {
 			previousImage() {
 				this.index = (this.index === 0) ? this.slides.length - 1 : this.index - 1;
@@ -61,7 +62,6 @@
 				this.index = index; 
 			}
 		}
-
 	}
 </script>
 

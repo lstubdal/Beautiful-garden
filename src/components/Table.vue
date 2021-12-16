@@ -4,7 +4,8 @@
 		<table>
 			<thead>
 				<tr>
-					<td>
+					<td> 
+						<!-- on-click buttons for sorting by flower-type or maintained-date  -->
 						<button @click="sortBy('type')" class="sort-table__button" aria-label="sort by type button"> Flower 
 							<img src="../../public/img/arrowTable.svg" alt="sort arrows">
 						</button>
@@ -18,7 +19,7 @@
 			</thead>
 
 			<tbody>
-				<!-- looping data in array -->
+				<!-- looping table data in array -->
 				<tr v-for="row in naturalSort">
 					<td v-for="value in row">{{ value }}</td>	
 				</tr>
@@ -31,7 +32,7 @@
 </template>
 
 <script>
-	const flowerData = `[{ "type": "Cuming's Lovegrass", "date": "06/08/2021" }, { "type": "Theobroma", "date": "10/08/2021" }, { "type": "Dotted Lichen", "date": "08/08/2021" }, { "type": "Celandine", "date": "19/08/2021" }, { "type": "Pineland Lobelia", "date": "07/08/2021" }, { "type": "Stebbins' Desertparsley", "date": "02/08/2021" }, { "type": "Cascade False Hellebore", "date": "04/08/2021" }, { "type": "Fritz's Zeuxine", "date": "13/08/2021" }, { "type": "Monardella", "date": "23/08/2021" }, { "type": "Everglades Buttonweed", "date": "24/08/2021" }] `;
+	const flowerData = `[{ "type": "Cuming's Lovegrass", "date": "06/08/2021" }, { "type": "Theobroma", "date": "10/08/2021" }, { "type": "Dotted Lichen", "date": "08/08/2021" }, { "type": "Celandine", "date": "19/08/2021" }, { "type": "Pineland Lobelia", "date": "07/08/2021" }, { "type": "Stebbins' Desertparsley", "date": "02/08/2021" }, { "type": "Cascade", "date": "04/08/2021" }, { "type": "Fritz's Zeuxine", "date": "13/08/2021" }, { "type": "Monardella", "date": "23/08/2021" }, { "type": "Everglades Buttonweed", "date": "24/08/2021" }] `;
 	
 	export default {
 		data() {
@@ -41,21 +42,8 @@
 					key: 'type',
 					order: 'asc',
 				},
-				content: JSON.parse(flowerData),
+				content: JSON.parse(flowerData),  
 			};
-		},
-
-		// lifecycle hook - created() is a function
-		created() {
-			const query = this.$route.query;
-
-			if (query.sort) {
-				this.sort.key = query.sort;
-			}
-
-			if (query.order) {
-				this.sort.order = query.order;
-			}
 		},
 
 		computed: {
@@ -68,9 +56,9 @@
 					if (a[key] > b[key]) {
 						return 1;
 					} else if (a[key] < b[key]) {
-						return -1;
+						return -1;  /* return -1 if b is larger than a */
 					} else {
-						return 0
+						return /* return 0 if a and b is the same */
 					}
 				}
 
@@ -92,6 +80,7 @@
 			},
 		},
 
+		/* buttons for sorting data */
 		methods: {
 			sortBy(key) {
 				this.sort.key = key;

@@ -10,7 +10,10 @@
 				<p class="contact-form__error">{{ emailValidation }}</p>
 				<p class="contact-form__error">{{ messageValidation }}</p>
 			</div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 			<div class="contact-form__fullName">
 				<input class="contact-form__firstName" type="text" placeholder="First name" v-model="form.firstName" label="First name"/>	
 				<input class="contact-form__lastName" type="text" placeholder="Last name" v-model="form.lastName" label="Last name"/>
@@ -25,6 +28,7 @@
 </template>
 
 <script>
+	/* fetches the form data */
 	export default {
 		data() {
 			return {
@@ -39,18 +43,17 @@
 			};
 		},
 
+		/* checks validation of input */
 		methods: {
 			validateForm() {
-				if (this.form.firstName.length && this.form.lastName.length && this.form.email.length && this.form.message.length  ) {							// if 0, this form did not pass validation 
-					return this.error = 'Form sent!';				// if greater than 0, validation passed and form sent
+				if (this.form.firstName.length && this.form.lastName.length && this.form.email.length && this.form.message.length  ) {
+					return this.error = 'Form sent!';				/* // if value is greater than 0, validation passed and form can be sent */
 				}
-				return this.error = 'Invalid form.';
+				return this.error = 'Invalid form.';			/* if value is 0, this form did not pass validation  */
 			},
-			resetForm() {
-
-			}
 		},
 
+		/*  alerts if validation did not pass */
 		computed: {
 			firstNameValidation: function () {
 				if ( ! this.form.firstName.length && this.error) {
