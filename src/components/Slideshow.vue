@@ -37,7 +37,7 @@
 					{ title: 'Daisy', caption: 'Daisy', file:  '/slideshow/daisy.jpg' },
 					{ title: 'Peony', caption: 'Peony', file:  '/slideshow/peony.jpg' },
 					{ title: 'Rose', caption: 'Rose', file:  '/slideshow/rose.jpg' },
-					{ title: 'Tulip', caption: 'Tulip', file:  '/public/slideshow/tulip.jpg' },
+					{ title: 'Tulip', caption: 'Tulip', file:  '/slideshow/tulip.jpg' },
 				],
 			};
 		},
